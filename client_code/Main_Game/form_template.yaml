@@ -30,6 +30,6 @@ components:
   name: navbar_links
   layout_properties: {slot: nav-right}
 - type: Timer
-  properties: {}
+  properties: {interval: 0.1}
   name: timer_1
   event_bindings: {tick: timer_1_tick}

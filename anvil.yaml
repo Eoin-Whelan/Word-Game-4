@@ -2,12 +2,12 @@ services:
 - source: /runtime/services/tables.yml
   client_config: {}
   server_config: {auto_create_missing_columns: false}
+startup: {type: form, module: Landing_Page}
 package_name: word_game_4
 allow_embedding: false
 name: Word Game 4 2000
 runtime_options: {version: 2, client_version: '3', server_version: python3-full}
 metadata: {}
-startup_form: Main_Game
 db_schema:
 - name: high_scores
   id: 105527
