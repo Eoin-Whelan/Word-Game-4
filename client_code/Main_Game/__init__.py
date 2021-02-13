@@ -19,7 +19,7 @@ class Main_Game(Main_GameTemplate):
     global clock
     self.timer_1.interval = 0
     print(self.timer_1)
-    print(clock)
+    print(round(clock, 2))
     pass
 
   def timer_1_tick(self, **event_args):
