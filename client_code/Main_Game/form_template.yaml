@@ -29,3 +29,7 @@ components:
   properties: {}
   name: navbar_links
   layout_properties: {slot: nav-right}
+- type: Timer
+  properties: {}
+  name: timer_1
+  event_bindings: {tick: timer_1_tick}
