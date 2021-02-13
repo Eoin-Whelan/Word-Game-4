@@ -12,7 +12,7 @@ class Landing_Page(Landing_PageTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
     diction = anvil.server.call('occurence_dict', "aratauro")
-    words = ["taurus", "taurus", "taurus", "taurss", "taurus", "taurus", "taurus"]
+    words = "taurus taurus taurus taurss taurus tau taurus taurus"
     anvil.server.call('submit_answers', words, "taurus")
     # Any code you write here will run when the form opens.
     

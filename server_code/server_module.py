@@ -28,15 +28,31 @@ def occurence_dict(word):
 #SCV
 @anvil.server.callable
 def submit_answers(user_input, given_word):
-  print("SCV reporting for duty")
+  print("Checking answers")
   #print([letter for letter in user_input if letter not in given_word])
   #print(occurences)
-  # Builds the difference set from the user input words and the supplied source word.
+  input_words = user_input.split(" ")
+  fail_conditions = {"short_words": [],
+                      "invalid_chars": [],
+                      "invalid_words": [],
+                      }
+  # Every fail condition is checked.
+  
+  # Did the user input 7 words?
+  if len(input_words) != 7:
+    print("Invalid Num of words!")
+    fail_conditions.extend("invalid_num", len(input_words))
+  # Go through each word the user input
   for word in user_input:
-    if len([letter for letter in word if letter not in given_word]) == 0:
-      occurences = occurence_dict(given_word)
-      print("Passed!")
-      print(occurences)
+    # Is the word less than 4?
+    if len(word) < 4:
+      fail_conditions.extend("short_words", word)
+    # Are there any "new"/invalid characters in the word?
+    fail_conditions.extend("invalid_chars", letter for letter in word if letter not in given_word)
+    
+    # Check for if the word uses any extra charac
+    occurences = occurence_dict(given_word)
+
       for letter in word:
           if letter in occurences:
             occurences[letter] -= 1
