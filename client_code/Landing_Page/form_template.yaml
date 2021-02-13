@@ -4,7 +4,7 @@ container:
   properties: {html: '@theme:standard-page.html'}
 components:
 - type: ColumnPanel
-  properties: {col_widths: '{"TTDKAK":15,"KFIPZL":45}'}
+  properties: {col_widths: '{"TTDKAK":15,"KFIPZL":45,"NICTAQ":5,"SHQXKE":55}'}
   name: content_panel
   layout_properties: {slot: default}
   components:
@@ -46,10 +46,91 @@ components:
       italic: false, background: '', bold: false, underline: false, icon: ''}
     name: label_3_copy
     layout_properties: {grid_position: 'KBUFJZ,LELFPC'}
+  - type: ColumnPanel
+    properties: {col_widths: '{}'}
+    name: column_panel_1
+    layout_properties: {grid_position: 'MOEYZJ,KNJMLV'}
+    components:
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+        visible: true, text: '1. Each word is only made up from the letters contained
+          within the sourceword.
+
+          ', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small,
+        italic: false, background: '', bold: false, underline: false, icon: ''}
+      name: label_4
+      layout_properties: {grid_position: 'WGBFKM,QEPFWL'}
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+        visible: true, text: '2. You haven''t reused any letter more times that it
+          appears in the sourceword.
+
+          ', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small,
+        italic: false, background: '', bold: false, underline: false, icon: ''}
+      name: label_5
+      layout_properties: {grid_position: 'OKXVSK,LQEMNA'}
   - type: Label
-    properties: {}
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: '3. Each word exists within the dictionary (i.e., it''s
+        a “real” word).
+
+        ', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small,
+      italic: false, background: '', bold: false, underline: false, icon: ''}
+    name: label_6
+    layout_properties: {grid_position: 'BXLNRQ,UQUCFR'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: '4. The words all have four letters or more.
+
+        ', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small,
+      italic: false, background: '', bold: false, underline: false, icon: ''}
+    name: label_7
+    layout_properties: {grid_position: 'FBLBPC,COHSOI'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: '5. There are no duplicate words.
+
+        ', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small,
+      italic: false, background: '', bold: false, underline: false, icon: ''}
+    name: label_8
+    layout_properties: {grid_position: 'AMYEFL,JRELBD'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: 6. None of the seven words is the source word., font_size: null,
+      font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
     name: label_9
-    layout_properties: {grid_position: 'UHKTKC,ZWODJS'}
+    layout_properties: {grid_position: 'ZHGBEY,YDZPBO'}
+  - type: Label
+    properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'Note:', font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+      underline: false, icon: ''}
+    name: label_11
+    layout_properties: {grid_position: 'TSRRYN,NICTAQ'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'Case is NOT significiant (i.e., This, THIS, and this are
+        the *same* word).
+
+
+        ', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small,
+      italic: false, background: '', bold: false, underline: false, icon: ''}
+    name: label_10
+    layout_properties: {grid_position: 'TSRRYN,SHQXKE'}
+  - type: FlowPanel
+    properties: {}
+    name: flow_panel_2
+    layout_properties: {grid_position: 'UOIVHG,HLOOND'}
+    components:
+    - type: Button
+      properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+        foreground: '', visible: true, text: let's Play!, font_size: null, font: '',
+        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '', bold: false, underline: false, icon: ''}
+      name: button_1
+      layout_properties: {}
+      event_bindings: {click: button_1_click}
 - type: FlowPanel
   properties: {}
   name: navbar_links
