@@ -2,6 +2,68 @@ services:
 - source: /runtime/services/tables.yml
   client_config: {}
   server_config: {auto_create_missing_columns: false}
+- source: /runtime/services/google.yml
+  client_config:
+    app_files:
+    - capabilities: {canCopy: true, canEdit: true}
+      editable: true
+      copyable: true
+      webContentLink: https://drive.google.com/uc?id=1Oz7gCcNbZWukY7_mjwNK1iZrFSrrsppY&export=download
+      embedLink: https://drive.google.com/file/d/1Oz7gCcNbZWukY7_mjwNK1iZrFSrrsppY/preview?usp=drivesdk
+      fileExtension: ''
+      copyRequiresWriterPermission: false
+      python_name: word_game_dictionary
+      explicitlyTrashed: false
+      lastModifyingUser:
+        kind: drive#user
+        displayName: Eoin Farrell
+        picture: {url: 'https://lh3.googleusercontent.com/a-/AOh14GiiC9PIqxxcuJWuSS8WTEbDtby4NTpcJljsyGkIf4E=s64'}
+        isAuthenticatedUser: true
+        permissionId: 09510850222426144557
+        emailAddress: eoinfar75@gmail.com
+      shared: false
+      createdDate: '2021-02-13T13:52:56.425Z'
+      id: 1Oz7gCcNbZWukY7_mjwNK1iZrFSrrsppY
+      owners:
+      - kind: drive#user
+        displayName: Eoin Farrell
+        picture: {url: 'https://lh3.googleusercontent.com/a-/AOh14GiiC9PIqxxcuJWuSS8WTEbDtby4NTpcJljsyGkIf4E=s64'}
+        isAuthenticatedUser: true
+        permissionId: 09510850222426144557
+        emailAddress: eoinfar75@gmail.com
+      markedViewedByMeDate: '1970-01-01T00:00:00.000Z'
+      spaces: [drive]
+      parents:
+      - {kind: drive#parentReference, id: 1u6hdUG2I8N9UXeg3Xx4Fc6NqNDOaCRPg, selfLink: 'https://www.googleapis.com/drive/v2/files/1Oz7gCcNbZWukY7_mjwNK1iZrFSrrsppY/parents/1u6hdUG2I8N9UXeg3Xx4Fc6NqNDOaCRPg',
+        parentLink: 'https://www.googleapis.com/drive/v2/files/1u6hdUG2I8N9UXeg3Xx4Fc6NqNDOaCRPg',
+        isRoot: false}
+      labels: {starred: false, hidden: false, trashed: false, restricted: false, viewed: true}
+      iconLink: https://drive-thirdparty.googleusercontent.com/16/type/text/plain
+      headRevisionId: 0B_4jekzk3vpucGNkaGg0VWNEKzU1MGVHRUZZbFpZVnNwYm9jPQ
+      selfLink: https://www.googleapis.com/drive/v2/files/1Oz7gCcNbZWukY7_mjwNK1iZrFSrrsppY
+      lastViewedByMeDate: '2021-02-13T13:52:56.425Z'
+      userPermission: {kind: drive#permission, etag: '"TAXWAWvVOZhccqljXlT9QX-Xf4M"',
+        id: me, selfLink: 'https://www.googleapis.com/drive/v2/files/1Oz7gCcNbZWukY7_mjwNK1iZrFSrrsppY/permissions/me',
+        role: owner, type: user}
+      lastModifyingUserName: Eoin Farrell
+      etag: '"MTYxMzIyNDM3NjQyNQ"'
+      kind: drive#file
+      modifiedByMeDate: '2021-02-13T13:52:56.425Z'
+      title: word_game
+      version: '2'
+      appDataContents: false
+      writersCanShare: true
+      fileSize: '0'
+      alternateLink: https://drive.google.com/file/d/1Oz7gCcNbZWukY7_mjwNK1iZrFSrrsppY/view?usp=drivesdk
+      mimeType: text/plain
+      modifiedDate: '2021-02-13T13:52:56.425Z'
+      downloadUrl: https://www.googleapis.com/drive/v2/files/1Oz7gCcNbZWukY7_mjwNK1iZrFSrrsppY?alt=media&source=downloadUrl
+      quotaBytesUsed: '0'
+      md5Checksum: d41d8cd98f00b204e9800998ecf8427e
+      originalFilename: ''
+      thumbnailLink: https://lh3.googleusercontent.com/jJZCRPLHiSSMLJ_wXRLF-vx6eoQM_y6uomHx3mliUHLOxdtDfhP6EXqZ0IeK83FMu1TUtGxE_Jc3DFs=s220
+      ownerNames: [Eoin Farrell]
+  server_config: {delegation_refresh_token: 1//03CKj5VMU0PQ6CgYIARAAGAMSNwF-L9Irfl96flQmnwSDeIndn_L0Jg5eKfCHq_UDLmepwZLYiWhC8BuHgchU9mEqnyWRdLIIZfM}
 startup: {type: form, module: Landing_Page}
 package_name: word_game_4
 allow_embedding: false
