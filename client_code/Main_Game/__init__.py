@@ -11,7 +11,7 @@ class Main_Game(Main_GameTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-    self.timer_1.interval = 1
+    self.timer_1.interval = 0.1
     # Any code you write here will run when the form opens.
 
   def submit_btn_click(self, **event_args):
@@ -26,7 +26,7 @@ class Main_Game(Main_GameTemplate):
     """This method is called Every [interval] seconds. Does not trigger if [interval] is 0."""
     global clock
     
-    clock += 1
+    clock += 0.1
     pass
 
 
