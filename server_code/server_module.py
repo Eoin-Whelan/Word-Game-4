@@ -29,19 +29,24 @@ def occurence_dict(word):
 @anvil.server.callable
 def submit_answers(user_input, given_word):
   print("SCV reporting for duty")
-  occurences = occurence_dict(given_word)
   #print([letter for letter in user_input if letter not in given_word])
   #print(occurences)
   # Builds the difference set from the user input words and the supplied source word.
-  
-    if len([letter for letter in user_input if letter not in given_word]) == 0:
+  for word in user_input:
+    if len([letter for letter in word if letter not in given_word]) == 0:
+      occurences = occurence_dict(given_word)
       print("Passed!")
-      for letter in user_input:
+      print(occurences)
+      for letter in word:
           if letter in occurences:
             occurences[letter] -= 1
-      print(occurences)
+            print(occurences)
+      if any(value < 0 for value in occurences.values()):
+        print("Ran out of letters for ", word)
+        
     else:
       print("fail!")
+      break
   #print(occurences, '\n' ,user_input, given_word)
   
   
