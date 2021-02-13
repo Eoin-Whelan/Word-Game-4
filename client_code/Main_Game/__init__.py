@@ -15,7 +15,7 @@ class Main_Game(Main_GameTemplate):
 
   def submit_btn_click(self, **event_args):
     """This method is called when the button is clicked"""
-    Global c
+    global c
     self.timer_1.interval = 0
     print(c)
     pass
