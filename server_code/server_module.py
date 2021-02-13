@@ -30,16 +30,18 @@ def occurence_dict(word):
 def submit_answers(user_input, given_word):
   print("SCV reporting for duty")
   occurences = occurence_dict(given_word)
-  print([letter for letter in user_input if letter not in given_word])
+  #print([letter for letter in user_input if letter not in given_word])
   #print(occurences)
-  if len([letter for letter in user_input if letter not in given_word]) == 0:
-    print("Passed!")
-    for letter in user_input:
-        if letter in occurences:
-          occurences[letter] -= 1
-    print(occurences)
-  else:
-    print("fail!")
+  # Builds the difference set from the user input words and the supplied source word.
+  
+    if len([letter for letter in user_input if letter not in given_word]) == 0:
+      print("Passed!")
+      for letter in user_input:
+          if letter in occurences:
+            occurences[letter] -= 1
+      print(occurences)
+    else:
+      print("fail!")
   #print(occurences, '\n' ,user_input, given_word)
   
   
