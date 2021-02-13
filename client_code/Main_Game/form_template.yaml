@@ -1,0 +1,31 @@
+is_package: true
+container:
+  type: HtmlTemplate
+  properties: {html: '@theme:standard-page.html'}
+components:
+- type: ColumnPanel
+  properties: {col_widths: '{"PPNPBX":45,"IDWGBZ":15}'}
+  name: content_panel
+  layout_properties: {slot: default}
+  components:
+  - type: Label
+    properties: {}
+    name: start_label
+    layout_properties: {grid_position: 'USPSOK,DNUBAE'}
+  - type: TextBox
+    properties: {}
+    name: user_input_box
+    layout_properties: {grid_position: 'ZVTWVA,VWUKYM'}
+  - type: FlowPanel
+    properties: {}
+    name: flow_panel_1
+    layout_properties: {grid_position: 'MOGQLY,PPNPBX'}
+  - type: Button
+    properties: {text: button_1}
+    name: submit_btn
+    layout_properties: {grid_position: 'MOGQLY,IDWGBZ'}
+    event_bindings: {click: submit_btn_click}
+- type: FlowPanel
+  properties: {}
+  name: navbar_links
+  layout_properties: {slot: nav-right}
