@@ -30,7 +30,7 @@ class Main_Game(Main_GameTemplate):
       open_form('Fail_Page', fail_conditions)
     else:
       print(round(self.clock, 3))
-      open_form('Win_Page', words, round(self.clock, 3))
+      open_form('Win_Page', self.random_word.text, words, round(self.clock, 3))
     pass
 
   def timer_1_tick(self, **event_args):

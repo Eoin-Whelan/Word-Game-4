@@ -79,14 +79,24 @@ def import_dictionary():
 @anvil.server.callable
 def return_top_ten():
   high_scores = app_tables.high_scores.search(tables.order_by("time",ascending=True))
-  print(sort(high_scores)
   return high_scores
   print(type(high_scores))
     #.order_by("position", ascending=False)
 
 @anvil.server.callable
 def record_score(name, source_word, record_time, given_words):
-  print("HI")
-          #tables.order_by("created", ascending=False), user=current_user
+  app_tables.high_scores.add_row(name=name, source_word=source_word, time=record_time,matches=given_words)
+  #high_scores = app_tables.high_scores.search(tables.order_by("time", ascending=True))
   
-  high_scores = app_tables.high_scores.search(tables.order_by("time", ascending=True))
+   
+@anvil.server.http_endpoint("/top10")
+def top10():
+    """
+    pattern API endpoint takes an argument passed in via the :pat
+    variable and creates a dictionary of the results. That is returned
+    as a
+    """
+    open(anvil.)
+    result = {"matches": find_possible_matches(pat)}
+    return find_possible_matches(pat)
+

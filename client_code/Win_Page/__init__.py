@@ -8,9 +8,16 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 
 class Win_Page(Win_PageTemplate):
-  def __init__(self, words, time, **properties):
+  source_word = None
+  word_matches = None
+  
+  def __init__(self, given_word, words, time, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
+    global source_word
+    source_word = given_word
+    global word_matches
+    word_matches = words
     print(words)
     print(time)
     self.player_time_label.text = time
@@ -19,7 +26,8 @@ class Win_Page(Win_PageTemplate):
     
 
   def button_1_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    
+    anvil.server.call('record_score', self.name_box.text, source_word, float(self.player_time_label.text), word_matches)    
+    open_form('Top_10')
+    #anvil.server.call('record_score', self.name_box.text, given_word, int(self.player_time_label.text), words)    
     pass
 
