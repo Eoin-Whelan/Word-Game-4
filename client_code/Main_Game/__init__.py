@@ -21,18 +21,15 @@ class Main_Game(Main_GameTemplate):
 
   def submit_btn_click(self, **event_args):
     """This method is called when the button is clicked"""
-    self.timer_1.interval = 0
-    print(self.timer_1)
     self.clock = time.time() - self.clock
     words = self.user_input_box.text
     #words = "towing towel wing goat twong toe nile"
     #words = "towing towel wing tong legion tingle nile"
     fail_conditions = anvil.server.call('submit_answers', words, self.random_word.text)
-    if any(len(criteria) != 0 for criteria in fail_conditions.values()):
+    if any(fail_conditions.values()):
       open_form('Fail_Page', fail_conditions)
     else:
       open_form('Win_Page', words, round(self.clock, 3))
-    print(round(self.clock, 3))
     pass
 
   def timer_1_tick(self, **event_args):

@@ -4,14 +4,57 @@ container:
   properties: {html: '@theme:standard-page.html'}
 components:
 - type: ColumnPanel
-  properties: {col_widths: '{}'}
+  properties: {col_widths: '{"FHUFOH":25,"HVXTKI":35,"CNMAFB":20,"BESKHO":15,"SYPIAI":45}'}
   name: content_panel
   layout_properties: {slot: default}
   components:
+  - type: Label
+    properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
+      visible: true, text: Congratulations!, font_size: 24, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+      underline: false, icon: ''}
+    name: congrats_label
+    layout_properties: {grid_position: 'VUXKMX,RPBPED RDMKHN,OZZLHL'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'You did it! Your time was:', font_size: null, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    name: congrats_msg_label
+    layout_properties: {grid_position: 'VUXKMX,RPBPED LDQBCZ,FHUFOH'}
+  - type: Label
+    properties: {}
+    name: player_time_label
+    layout_properties: {grid_position: 'VUXKMX,RPBPED LDQBCZ,HVXTKI'}
+  - type: TextBox
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Please Enter Your Name To Record Your Time,
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false}
+    name: name_box
+    layout_properties: {grid_position: 'VUXKMX,RPBPED XLAHVQ,BMIKPO'}
   - type: Image
     properties: {}
     name: victory_gif
     layout_properties: {grid_position: 'VUXKMX,MKRYMX'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'Proceed to the leaderboard: ', font_size: null, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    name: label_1
+    layout_properties: {grid_position: 'QSTDGW,CNMAFB'}
+  - type: Button
+    properties: {role: null, align: full, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Go, font_size: 16, font: '', spacing_above: small,
+      icon_align: right, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: 'fa:arrow-circle-right'}
+    name: button_1
+    layout_properties: {grid_position: 'QSTDGW,BESKHO'}
+  - type: FlowPanel
+    properties: {}
+    name: flow_panel_1
+    layout_properties: {grid_position: 'QSTDGW,SYPIAI'}
 - type: FlowPanel
   properties: {}
   name: navbar_links
