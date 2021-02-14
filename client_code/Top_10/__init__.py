@@ -11,6 +11,6 @@ class Top_10(Top_10Template):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-
+    self.high_scores.items = anvil.server.call('return_top_ten')
     # Any code you write here will run when the form opens.
     

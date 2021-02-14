@@ -141,10 +141,6 @@ db_schema:
       name: matches
       type: string
       admin_ui: {order: 4, width: 269.76666}
-    PF30rUGIYGA=:
-      name: position
-      type: number
-      admin_ui: {order: -1, width: 200}
     qgzJRV+qpzM=:
       name: time
       type: number
@@ -153,6 +149,6 @@ db_schema:
       name: name
       type: string
       admin_ui: {order: 0, width: 200}
-  access: {python_name: high_scores, app_id: ZKQQNK6DKV3PVUFL, server: full, client: none,
+  access: {python_name: high_scores, app_id: ZKQQNK6DKV3PVUFL, server: full, client: search,
     table_mapping_name: null, table_mapping_id: null, table_id: 105527}
 renamed: true

@@ -5,11 +5,7 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.server
 from anvil.google.drive import app_files
-
-
-
-
-      
+ 
       
 @anvil.server.callable
 def occurence_dict(word):
@@ -72,39 +68,25 @@ def submit_answers(user_input, given_word):
   
 @anvil.server.callable
 def import_dictionary():
-    """
-    Imports the words_txt file through the Anvil Google Drive API.
-    It then converts to bytes and casts to a string
-    before applying the string-relevant functions to
-    transform and return it as a list.
-    
-    fStr = app_files.words_txt.get_bytes()
-    fStr = str(fStr, "utf-8")
-    fStr = fStr.split("\n")
-    fSet = {line.replace("'s", "").lower() for line in fStr}
-    fSet = sorted(fSet)[1::]
-    return fSet
-    """
-    dictionary_raw = app_files.words_txt.get_bytes()
-    fStr = str(dictionary_raw, "utf-8")
-    fStr = fStr.split("\n")
-    fSet = {line.replace("'s", "").lower() for line in fStr}
-    words = sorted(fSet)[1::]
-    return words
+
+  dictionary_raw = app_files.words_txt.get_bytes()
+  fStr = str(dictionary_raw, "utf-8")
+  fStr = fStr.split("\n")
+  fSet = {line.replace("'s", "").lower() for line in fStr}
+  words = sorted(fSet)[1::]
+  return words
   
 @anvil.server.callable
 def return_top_ten():
-  #items = 
-  return app_tables.high_scores.search()
-# rather than in the user's browser.
-#
-# To allow anvil.server.call() to call functions here, we mark
-# them with @anvil.server.callable.
-# Here is an example - you can replace it with your own:
-#
-# @anvil.server.callable
-# def say_hello(name):
-#   print("Hello, " + name + "!")
-#   return 42
-#
+  high_scores = app_tables.high_scores.search(tables.order_by("time",ascending=True))
+  print(sort(high_scores)
+  return high_scores
+  print(type(high_scores))
+    #.order_by("position", ascending=False)
 
+@anvil.server.callable
+def record_score(name, source_word, record_time, given_words):
+  print("HI")
+          #tables.order_by("created", ascending=False), user=current_user
+  
+  high_scores = app_tables.high_scores.search(tables.order_by("time", ascending=True))
