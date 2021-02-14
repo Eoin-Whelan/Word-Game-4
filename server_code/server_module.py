@@ -37,7 +37,17 @@ def submit_answers(user_input, given_word):
                       "invalid_chars": [],
                       "invalid_words": [],
                       }
+  
   # Every fail condition is checked.
+  
+  # Append any word that has differentiating characters to the original
+  [fail_conditions['invalid_words'].append(word) for word in input_words if not all(letter in given_word for letter in word)]
+  """
+  List comprehension that appends
+  """
+  #[fail_conditions['invalid_words'].append(word) for word in input_words if all(word.split()) not in (given_word.split())]
+  print(fail_conditions)
+
   
   # Did the user input 7 words?
   if len(input_words) != 7:
@@ -45,6 +55,7 @@ def submit_answers(user_input, given_word):
     fail_conditions.update({"invalid_num": len(input_words)})
   # Go through each word the user input
   for word in input_words:
+    print(all(letter in given_word for letter in word))
     print(word)
     # Is the word less than 4?
     if len(word) < 4:
@@ -55,17 +66,13 @@ def submit_answers(user_input, given_word):
     # Check for if the word uses any extra charac
     
     occurences = occurence_dict(given_word)
-    #[fail_conditions['invalid_words'].append(word) for word in input_words if(ele in test_string)]
-    word_list = word.split()
-    [fail_conditions['invalid_words'].append(word) for word in input_words if any(word_list.items()) is not in occurences.keys()]
-
     for letter in word:
       if letter in occurences:
         occurences[letter] -= 1
-      else if any(letter for word if not in occurences.values():
       if any(value < 0 for value in occurences.values()):
         fail_conditions['invalid_words'].append(word)
   print(fail_conditions)
+
 
   #print(occurences, '\n' ,user_input, given_word)
   
