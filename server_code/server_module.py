@@ -7,17 +7,10 @@ import anvil.server
 from anvil.google.drive import app_files
 
 
-class Dictionary:
-   words = []
-   def __init__(self,):
-      dictionary_raw = app_files.word_game_dictionary.get_bytes()
-      fStr = str(dictionary_raw, "utf-8")
-      fStr = fStr.split("\n")
-      fSet = {line.replace("'s", "").lower() for line in fStr}
-      words = sorted(fSet)[1::]
+
+
       
       
-word_list = Dictionary()
 @anvil.server.callable
 def occurence_dict(word):
   occurences = {}
@@ -37,6 +30,7 @@ def submit_answers(user_input, given_word):
   fail_conditions = {"short_words": [],
                       "invalid_chars": [],
                       "invalid_words": [],
+                      "mispelled_words": []
                       }
   
   # Every fail condition is checked.
@@ -46,14 +40,12 @@ def submit_answers(user_input, given_word):
   """
   List comprehension that appends
   """
-  #[fail_conditions['invalid_words'].append(word) for word in input_words if all(word.split()) not in (given_word.split())]
-  print(fail_conditions)
-
   
   # Did the user input 7 words?
   if len(input_words) != 7:
     print("Invalid Num of words!")
     fail_conditions.update({"invalid_num": len(input_words)})
+  dictionary = import_dictionary()
   # Go through each word the user input
   for word in input_words:
     #print(all(letter in given_word for letter in word))
@@ -71,11 +63,12 @@ def submit_answers(user_input, given_word):
         occurences[letter] -= 1
       if any(value < 0 for value in occurences.values()):
         fail_conditions['invalid_words'].append(word)
+        
+    if word not in dictionary:
+      fail_conditions['mispelled_words'].append(word)
+          
   print(fail_conditions)
-
-
-  #print(occurences, '\n' ,user_input, given_word)
-  
+  return fail_conditions
   
 @anvil.server.callable
 def import_dictionary():
@@ -84,13 +77,20 @@ def import_dictionary():
     It then converts to bytes and casts to a string
     before applying the string-relevant functions to
     transform and return it as a list.
-    """
+    
     fStr = app_files.words_txt.get_bytes()
     fStr = str(fStr, "utf-8")
     fStr = fStr.split("\n")
     fSet = {line.replace("'s", "").lower() for line in fStr}
     fSet = sorted(fSet)[1::]
     return fSet
+    """
+    dictionary_raw = app_files.words_txt.get_bytes()
+    fStr = str(dictionary_raw, "utf-8")
+    fStr = fStr.split("\n")
+    fSet = {line.replace("'s", "").lower() for line in fStr}
+    words = sorted(fSet)[1::]
+    return words
 # rather than in the user's browser.
 #
 # To allow anvil.server.call() to call functions here, we mark
