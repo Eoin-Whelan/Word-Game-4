@@ -91,6 +91,11 @@ def import_dictionary():
     fSet = {line.replace("'s", "").lower() for line in fStr}
     words = sorted(fSet)[1::]
     return words
+  
+@anvil.server.callable
+def return_top_ten():
+  #items = 
+  return app_tables.high_scores.search()
 # rather than in the user's browser.
 #
 # To allow anvil.server.call() to call functions here, we mark

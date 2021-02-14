@@ -17,17 +17,25 @@ components:
   properties: {}
   name: label_2
   layout_properties: {grid_position: 'IUUZDY,WYNTGW'}
+  data_bindings:
+  - {property: text, code: 'self.item[''name'']'}
 - type: Label
   properties: {}
   name: label_3
   layout_properties: {grid_position: 'IUUZDY,KSDUMO'}
+  data_bindings:
+  - {property: text, code: 'self.item[''source_word'']'}
 - type: Label
   properties: {}
   name: label_4
   layout_properties: {grid_position: 'IUUZDY,QXPGRO'}
+  data_bindings:
+  - {property: text, code: 'self.item[''time'']'}
 - type: Label
   properties: {}
   name: label_5
   layout_properties: {grid_position: 'IUUZDY,WUMEML'}
+  data_bindings:
+  - {property: text, code: 'self.item[''matches'']'}
 is_package: true
 item_type: {table_id: 105527}
