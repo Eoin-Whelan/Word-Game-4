@@ -1,0 +1,33 @@
+container:
+  type: ColumnPanel
+  properties: {col_widths: '{}'}
+components:
+- type: DataRowPanel
+  properties: {}
+  name: data_row_panel_1
+  layout_properties: {grid_position: 'IUUZDY,QKGKNX'}
+  components:
+  - type: Label
+    properties: {}
+    name: label_1
+    layout_properties: {column: null}
+    data_bindings:
+    - {property: text, code: 'self.item[''position'']'}
+- type: Label
+  properties: {}
+  name: label_2
+  layout_properties: {grid_position: 'IUUZDY,WYNTGW'}
+- type: Label
+  properties: {}
+  name: label_3
+  layout_properties: {grid_position: 'IUUZDY,KSDUMO'}
+- type: Label
+  properties: {}
+  name: label_4
+  layout_properties: {grid_position: 'IUUZDY,QXPGRO'}
+- type: Label
+  properties: {}
+  name: label_5
+  layout_properties: {grid_position: 'IUUZDY,WUMEML'}
+is_package: true
+item_type: {table_id: 105527}

@@ -29,6 +29,7 @@ class Main_Game(Main_GameTemplate):
     if any(fail_conditions.values()):
       open_form('Fail_Page', fail_conditions)
     else:
+      print(round(self.clock, 3))
       open_form('Win_Page', words, round(self.clock, 3))
     pass
 
