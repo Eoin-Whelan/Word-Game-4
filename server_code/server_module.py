@@ -32,6 +32,7 @@ def submit_answers(user_input, given_word):
   #print([letter for letter in user_input if letter not in given_word])
   #print(occurences)
   input_words = user_input.split(" ")
+  print(input_words)
   fail_conditions = {"short_words": [],
                       "invalid_chars": [],
                       "invalid_words": [],
@@ -41,28 +42,30 @@ def submit_answers(user_input, given_word):
   # Did the user input 7 words?
   if len(input_words) != 7:
     print("Invalid Num of words!")
-    fail_conditions.extend("invalid_num", len(input_words))
+    fail_conditions.update({"invalid_num": len(input_words)})
   # Go through each word the user input
-  for word in user_input:
+  for word in input_words:
+    print(word)
     # Is the word less than 4?
     if len(word) < 4:
-      fail_conditions.extend("short_words", word)
+      print("Invalid Length of word!")
+      fail_conditions["short_words"].append(word)
     # Are there any "new"/invalid characters in the word?
-    fail_conditions.extend("invalid_chars", letter for letter in word if letter not in given_word)
-    
+    [fail_conditions["invalid_chars"].append(letter) for letter in word if letter not in given_word]
     # Check for if the word uses any extra charac
+    
     occurences = occurence_dict(given_word)
+    #[fail_conditions['invalid_words'].append(word) for word in input_words if(ele in test_string)]
+    [fail_conditions['invalid_words'].append(word) for word in input_words if any(word.split()) is not in occurences.values()]
 
-      for letter in word:
-          if letter in occurences:
-            occurences[letter] -= 1
-            print(occurences)
+    for letter in word:
+      if letter in occurences:
+        occurences[letter] -= 1
+      else if any(letter for word if not in occurences.values():
       if any(value < 0 for value in occurences.values()):
-        print("Ran out of letters for ", word)
-        
-    else:
-      print("fail!")
-      break
+        fail_conditions['invalid_words'].append(word)
+  print(fail_conditions)
+
   #print(occurences, '\n' ,user_input, given_word)
   
   
