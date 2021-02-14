@@ -4,14 +4,21 @@ container:
   properties: {html: '@theme:standard-page.html'}
 components:
 - type: ColumnPanel
-  properties: {col_widths: '{"PPNPBX":45,"IDWGBZ":15}'}
+  properties: {col_widths: '{"PPNPBX":45,"IDWGBZ":15,"FOTCCP":10,"XMPYGK":50}'}
   name: content_panel
   layout_properties: {slot: default}
   components:
   - type: Label
-    properties: {}
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'Your word is:', font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
     name: start_label
-    layout_properties: {grid_position: 'USPSOK,DNUBAE'}
+    layout_properties: {grid_position: 'USPSOK,FOTCCP'}
+  - type: Label
+    properties: {}
+    name: random_word
+    layout_properties: {grid_position: 'USPSOK,XMPYGK'}
   - type: TextBox
     properties: {}
     name: user_input_box

@@ -7,6 +7,7 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.server
 import time
+import random
 
 
 class Main_Game(Main_GameTemplate):
@@ -14,6 +15,8 @@ class Main_Game(Main_GameTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
+    given_word = random.choice([word for word in anvil.server.call('import_dictionary') if len(word) >= 7])
+    self.random_word.text = given_word
     # Any code you write here will run when the form opens.
 
   def submit_btn_click(self, **event_args):
@@ -21,13 +24,14 @@ class Main_Game(Main_GameTemplate):
     self.timer_1.interval = 0
     print(self.timer_1)
     self.clock = time.time() - self.clock
+    words = self.user_input_box.text
     #words = "towing towel wing goat twong toe nile"
-    words = "towing towel wing tong legion tingle nile"
-    fail_conditions = anvil.server.call('submit_answers', words, "toweling")
+    #words = "towing towel wing tong legion tingle nile"
+    fail_conditions = anvil.server.call('submit_answers', words, self.random_word.text)
     if any(len(criteria) != 0 for criteria in fail_conditions.values()):
       open_form('Fail_Page', fail_conditions)
     else:
-      print ("you did it!")
+      open_form('Win_Page', words, round(self.clock, 3))
     print(round(self.clock, 3))
     pass
 
