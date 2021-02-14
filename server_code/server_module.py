@@ -56,7 +56,8 @@ def submit_answers(user_input, given_word):
     
     occurences = occurence_dict(given_word)
     #[fail_conditions['invalid_words'].append(word) for word in input_words if(ele in test_string)]
-    [fail_conditions['invalid_words'].append(word) for word in input_words if any(word.split()) is not in occurences.keys()]
+    word_list = word.split()
+    [fail_conditions['invalid_words'].append(word) for word in input_words if any(word_list.items()) is not in occurences.keys()]
 
     for letter in word:
       if letter in occurences:
