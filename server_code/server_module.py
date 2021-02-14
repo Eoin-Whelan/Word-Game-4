@@ -33,6 +33,7 @@ def submit_answers(user_input, given_word):
   #print(occurences)
   input_words = user_input.split(" ")
   print(input_words)
+  print(given_word)
   fail_conditions = {"short_words": [],
                       "invalid_chars": [],
                       "invalid_words": [],
@@ -55,8 +56,7 @@ def submit_answers(user_input, given_word):
     fail_conditions.update({"invalid_num": len(input_words)})
   # Go through each word the user input
   for word in input_words:
-    print(all(letter in given_word for letter in word))
-    print(word)
+    #print(all(letter in given_word for letter in word))
     # Is the word less than 4?
     if len(word) < 4:
       print("Invalid Length of word!")
