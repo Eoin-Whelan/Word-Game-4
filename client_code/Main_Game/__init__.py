@@ -21,8 +21,10 @@ class Main_Game(Main_GameTemplate):
     self.timer_1.interval = 0
     print(self.timer_1)
     self.clock = time.time() - self.clock
-    fail_conditions = anvil.server.call('occurence_dict', "aratauro")
-    if any(criteria != 0 for criteria in fail_conditions):
+    #words = "towing towel wing goat twong toe nile"
+    words = "towing towel wing tong legion tingle nile"
+    fail_conditions = anvil.server.call('submit_answers', words, "toweling")
+    if any(len(criteria) != 0 for criteria in fail_conditions.values()):
       open_form('Fail_Page', fail_conditions)
     else:
       print ("you did it!")

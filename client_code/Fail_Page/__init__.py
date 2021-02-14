@@ -8,7 +8,7 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 
 class Fail_Page(Fail_PageTemplate):
-  def __init__(self, **properties):
+  def __init__(self, fail_conditions, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
     print(fail_conditions)
