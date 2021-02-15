@@ -11,12 +11,3 @@ from anvil.tables import app_tables
 #
 #    Module1.say_hello()
 #
-anvil.open_form('Landing_Page')
-
-@anvil.server.callable
-
-def top_10():
-  anvil.open_form('Top_10')
-  
-  
-
