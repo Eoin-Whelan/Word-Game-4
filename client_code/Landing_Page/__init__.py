@@ -8,6 +8,7 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.http
 import anvil.server
+from . import Module1
 
 class Landing_Page(Landing_PageTemplate):
   def __init__(self, **properties):

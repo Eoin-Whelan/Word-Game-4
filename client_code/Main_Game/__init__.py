@@ -15,7 +15,7 @@ class Main_Game(Main_GameTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-    given_word = random.choice([word for word in anvil.server.call('import_dictionary') if len(word) >= 7])
+    given_word = random.choice([word for word in anvil.server.call('import_dictionary') if len(word) >= 8])
     self.random_word.text = given_word
     # Any code you write here will run when the form opens.
 
