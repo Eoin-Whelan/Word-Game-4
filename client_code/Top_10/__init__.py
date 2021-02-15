@@ -9,7 +9,7 @@ from anvil.tables import app_tables
 from HashRouting import routing
 
 @routing.route('top10')
-@routing.route('Top10')
+#@routing.route('Top10')
 class Top_10(Top_10Template):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
