@@ -9,7 +9,7 @@ import anvil.server
 import time
 import random
 
-#@main_router
+
 class Game_Form(Game_FormTemplate):
   clock = time.time()
   def __init__(self, **properties):
@@ -35,7 +35,6 @@ class Game_Form(Game_FormTemplate):
 
   def timer_1_tick(self, **event_args):
     """This method is called Every [interval] seconds. Does not trigger if [interval] is 0."""
-    
     self.clock += 0.001
     pass
 
