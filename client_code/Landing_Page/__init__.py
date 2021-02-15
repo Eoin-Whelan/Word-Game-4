@@ -12,6 +12,8 @@ class Landing_Page(Landing_PageTemplate):
   def __init__(self, **properties):
       # Set Form properties and Data Bindings.
     self.init_components(**properties)
+    if anvil.get_url_hash() == "https://c00164354-wordgame4.anvil.app/_/api/top10":
+      open_form('Top_10')
     diction = anvil.server.call('occurence_dict', "aratauro")
 
     # Any code you write here will run when the form opens.
