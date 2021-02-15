@@ -30,4 +30,10 @@ def top10():
 
 @anvil.server.callable
 def top_ten_form():
-  anvil.open_form('Top_10')
+  print('Hello')
+  anvil.server.
+  if anvil.server.context("https://c00164354-wordgame4.anvil.app/_/api/top10"):
+    print("Came from Endpoint")
+    return True
+  else:
+    return False
