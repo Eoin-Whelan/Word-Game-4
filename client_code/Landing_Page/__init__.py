@@ -6,10 +6,11 @@ import anvil.server
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
+import anvil.http
 
 class Landing_Page(Landing_PageTemplate):
   def __init__(self, **properties):
-    # Set Form properties and Data Bindings.
+      # Set Form properties and Data Bindings.
     self.init_components(**properties)
     diction = anvil.server.call('occurence_dict', "aratauro")
 

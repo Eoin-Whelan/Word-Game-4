@@ -128,6 +128,7 @@ allow_embedding: false
 name: Word Game 4 2000
 runtime_options: {version: 2, client_version: '3', server_version: python3-full}
 metadata: {}
+startup_form: Fail_Page
 db_schema:
 - name: high_scores
   id: 105527
