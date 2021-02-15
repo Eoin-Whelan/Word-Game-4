@@ -16,7 +16,8 @@ class Landing_Page(Landing_PageTemplate):
       # Set Form properties and Data Bindings.
     self.init_components(**properties)
     #anvil.server.request
-    if get_url_hash() == "#top10":
+    print(get_url_hash())
+    if get_url_hash() == "top10":
       print("Yes")
       anvil.open_form('Top_10')
 

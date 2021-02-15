@@ -8,8 +8,9 @@ from anvil.tables import app_tables
 import anvil.server
 import time
 import random
+from HashRouting import routing
 
-
+@routing.main_router
 class Main_Game(Main_GameTemplate):
   clock = time.time()
   def __init__(self, **properties):
