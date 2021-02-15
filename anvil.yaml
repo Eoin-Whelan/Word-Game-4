@@ -61,7 +61,7 @@ services:
       quotaBytesUsed: '0'
       md5Checksum: d41d8cd98f00b204e9800998ecf8427e
       originalFilename: ''
-      thumbnailLink: https://lh3.googleusercontent.com/MUm-tTzbWCConNTmgDKbOGFn1uh9m4-BgTBdtKvHiSGAgoGeJsxBuPMbLixE-oBdzoxIPBtR3Y2CF-k=s220
+      thumbnailLink: https://lh3.googleusercontent.com/ugJaDthmjeF6v-adFzhGUsthZWlxU6L70DwZao7iivz7lBluh1IwbbE81UXQq09VPFTtw_lkCC04XHo=s220
       ownerNames: [Eoin Farrell]
     - capabilities: {canCopy: true, canEdit: true}
       editable: true
@@ -119,15 +119,17 @@ services:
       quotaBytesUsed: '976241'
       md5Checksum: 7d06f540d0a65a46e6d65c5254edb21f
       originalFilename: words.txt
-      thumbnailLink: https://lh3.googleusercontent.com/ra2ruYx7Ub5hvXi_ppaUWf-Y8cGpmRyDyJXB6U-vgCW7kGY3N2dMG8qvT-UkcutgZucZ3sikE1DIEs0=s220
+      thumbnailLink: https://lh3.googleusercontent.com/ye-OnUBCSfVuDBVAMfssntBFn76ioW0y9yBCi9l2u9F-GknGJwWrAJVkAnCIt34JvboxSGaJis2fet8=s220
       ownerNames: [Eoin Farrell]
   server_config: {delegation_refresh_token: 1//03CKj5VMU0PQ6CgYIARAAGAMSNwF-L9Irfl96flQmnwSDeIndn_L0Jg5eKfCHq_UDLmepwZLYiWhC8BuHgchU9mEqnyWRdLIIZfM}
-startup: {type: form, module: Landing_Page}
+startup: {type: form, module: Main_Page}
 package_name: word_game_4
 allow_embedding: false
 name: Word Game 4 2000
 runtime_options: {version: 2, client_version: '3', server_version: python3-full}
 metadata: {}
+startup_form: Fail_Page
+native_deps: {head_html: ''}
 db_schema:
 - name: high_scores
   id: 105527

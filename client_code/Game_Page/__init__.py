@@ -1,4 +1,4 @@
-from ._anvil_designer import Main_GameTemplate
+from ._anvil_designer import Game_PageTemplate
 from anvil import *
 import anvil.google.auth, anvil.google.drive
 from anvil.google.drive import app_files
@@ -8,10 +8,9 @@ from anvil.tables import app_tables
 import anvil.server
 import time
 import random
-from HashRouting import routing
 
-@routing.main_router
-class Main_Game(Main_GameTemplate):
+#@main_router
+class Game_Page(Game_PageTemplate):
   clock = time.time()
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
