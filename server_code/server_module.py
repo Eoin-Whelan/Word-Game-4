@@ -97,6 +97,7 @@ def top10():
     variable and creates a dictionary of the results. That is returned
     as a
     """
-    anvil.http.request("https://c00164354-wordgame4.anvil.app/")    #anvil.http.request()
+    Module1.top_10()
+    #return anvil.http.request(anvil.server.get_app_origin(), data="top_10")    #anvil.http.request()
 
 

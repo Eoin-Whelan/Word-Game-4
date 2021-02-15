@@ -7,7 +7,6 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.http
-from . import Module1
 
 
 class Landing_Page(Landing_PageTemplate):
@@ -16,8 +15,9 @@ class Landing_Page(Landing_PageTemplate):
     self.init_components(**properties)
     diction = anvil.server.call('occurence_dict', "aratauro")
     #anvil.server.request
-    if anvil.server.context.client == "https://c00164354-wordgame4.anvil.app/_/api/top10":
+    if anvil.server.context.client.type == 'browser':
       print("Came for top 10")
+      anvil.open_form('Top_10')
     # Any code you write here will run when the form opens.
     
 

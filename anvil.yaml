@@ -122,13 +122,12 @@ services:
       thumbnailLink: https://lh3.googleusercontent.com/QduAaxnFTgjdBmsirB0lJ8U2zi_Wv9nCOOHWbPyR_cSyZYvWzCQ0JvsLCgbw2ccUVzq06xPD7x3lNcE=s220
       ownerNames: [Eoin Farrell]
   server_config: {delegation_refresh_token: 1//03CKj5VMU0PQ6CgYIARAAGAMSNwF-L9Irfl96flQmnwSDeIndn_L0Jg5eKfCHq_UDLmepwZLYiWhC8BuHgchU9mEqnyWRdLIIZfM}
-startup: {type: form, module: Landing_Page}
+startup: {type: module, module: Module1}
 package_name: word_game_4
 allow_embedding: false
 name: Word Game 4 2000
 runtime_options: {version: 2, client_version: '3', server_version: python3-full}
 metadata: {}
-startup_form: Fail_Page
 db_schema:
 - name: high_scores
   id: 105527
