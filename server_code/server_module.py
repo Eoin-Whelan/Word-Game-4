@@ -97,11 +97,6 @@ def top10():
     variable and creates a dictionary of the results. That is returned
     as a
     """
-    print("Attempt")
-    #anvil.open_form('Top_10')
-    if Module1.top_ten_form():
-      return True
-    return False
-    #anvil.http.request()
+    anvil.http.request("https://c00164354-wordgame4.anvil.app/")    #anvil.http.request()
 
 
