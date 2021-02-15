@@ -28,7 +28,7 @@ class Win_Form(Win_FormTemplate):
     
 
   def button_1_click(self, **event_args):
-    anvil.server.call('record_score', self.name_box.text, source_word, float(self.player_time_label.text), word_matches)    
+    anvil.server.call('record_score', self.name_box.text, source_word, round(float(self.player_time_label.text), 3), word_matches)    
     set_url_hash('top10')
     routing.reload_page(hard=True)
     #anvil.server.call('record_score', self.name_box.text, given_word, int(self.player_time_label.text), words)    
