@@ -137,15 +137,15 @@ db_schema:
     AQlGf7kQhM8=:
       name: source_word
       type: string
-      admin_ui: {order: 3, width: 319.53366}
+      admin_ui: {order: 3, width: 163.29966000000002}
     K3kghvWXZ6Y=:
       name: matches
       type: string
-      admin_ui: {order: 4, width: 269.76666}
+      admin_ui: {order: 4, width: 356.53366}
     qgzJRV+qpzM=:
       name: time
       type: number
-      admin_ui: {order: 3, width: 200}
+      admin_ui: {order: 3, width: 119.76666}
     vDhpgfRkDjA=:
       name: name
       type: string

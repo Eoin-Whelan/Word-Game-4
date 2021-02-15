@@ -6,7 +6,7 @@ from anvil.tables import app_tables
 import anvil.server
 from anvil.google.drive import app_files
 import anvil.http
-
+from . import Module1
  
       
 @anvil.server.callable
@@ -97,8 +97,7 @@ def top10():
     variable and creates a dictionary of the results. That is returned
     as a
     """
-    
+    Module1.top_ten_form()
     #anvil.http.request()
-    return anvil.http.request(anvil.server.get_app_origin())
 
 
