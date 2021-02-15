@@ -30,4 +30,4 @@ def top10():
 
 @anvil.server.callable
 def top_ten_form():
-  return open_form('Top_10')
+  anvil.open_form('Top_10')
