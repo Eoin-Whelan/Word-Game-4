@@ -8,17 +8,19 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.http
 import anvil.server
-from . import Module1
+import time
 
 class Landing_Page(Landing_PageTemplate):
+
   def __init__(self, **properties):
       # Set Form properties and Data Bindings.
     self.init_components(**properties)
-    diction = anvil.server.call('occurence_dict', "aratauro")
     #anvil.server.request
-    print(anvil.server.context)
-    if anvil.server.context is "server_module":
-      print("Came for top 10")
+    if get_url_hash() == "#top10":
+      print("Yes")
+      anvil.open_form('Top_10')
+
+
     # Any code you write here will run when the form opens.
     
 
@@ -26,4 +28,8 @@ class Landing_Page(Landing_PageTemplate):
     """This method is called when the button is clicked"""
     anvil.open_form('Main_Game')
     pass
-
+  
+  def top_ten_direct(self):
+    if get_url_hash() == "#top10":
+      print("Yes")
+      anvil.open_form('Top_10')
