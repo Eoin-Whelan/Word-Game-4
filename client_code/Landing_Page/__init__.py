@@ -15,7 +15,8 @@ class Landing_Page(Landing_PageTemplate):
     self.init_components(**properties)
     diction = anvil.server.call('occurence_dict', "aratauro")
     #anvil.server.request
-    if anvil.http.url_decode() is "https://c00164354-wordgame4.anvil.app/_/api/top10":
+    print(anvil.server.context)
+    if anvil.server.context is "server_module":
       print("Came for top 10")
     # Any code you write here will run when the form opens.
     
