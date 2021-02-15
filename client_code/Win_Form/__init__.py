@@ -8,6 +8,8 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 from HashRouting import routing
 
+from ..Top_10 import Top_10
+
 class Win_Form(Win_FormTemplate):
   source_word = None
   word_matches = None
@@ -28,7 +30,7 @@ class Win_Form(Win_FormTemplate):
 
   def button_1_click(self, **event_args):
     anvil.server.call('record_score', self.name_box.text, source_word, float(self.player_time_label.text), word_matches)    
-    routing.load_form('Top_10', **properties)
+    routing.load_form(Top_10(**self.player_time_label))
     #anvil.server.call('record_score', self.name_box.text, given_word, int(self.player_time_label.text), words)    
     pass
 
