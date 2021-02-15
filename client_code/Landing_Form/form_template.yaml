@@ -1,12 +1,13 @@
-is_package: true
 container:
-  type: HtmlTemplate
-  properties: {html: '@theme:standard-page.html'}
+  type: ColumnPanel
+  properties: {col_widths: '{}'}
 components:
 - type: ColumnPanel
   properties: {col_widths: '{"TTDKAK":15,"KFIPZL":45,"NICTAQ":5,"SHQXKE":55}'}
   name: content_panel
-  layout_properties: {slot: default}
+  layout_properties:
+    col_widths: {}
+    grid_position: DOOMTK,LRMOVH
   components:
   - type: Label
     properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
@@ -131,7 +132,4 @@ components:
       name: button_1
       layout_properties: {}
       event_bindings: {click: button_1_click}
-- type: FlowPanel
-  properties: {}
-  name: navbar_links
-  layout_properties: {slot: nav-right}
+is_package: true

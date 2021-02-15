@@ -1,4 +1,4 @@
-from ._anvil_designer import Win_PageTemplate
+from ._anvil_designer import Win_FormTemplate
 from anvil import *
 import anvil.server
 import anvil.google.auth, anvil.google.drive
@@ -7,7 +7,7 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 
-class Win_Page(Win_PageTemplate):
+class Win_Form(Win_FormTemplate):
   source_word = None
   word_matches = None
   

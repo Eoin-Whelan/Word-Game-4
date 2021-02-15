@@ -1,4 +1,4 @@
-from ._anvil_designer import Game_PageTemplate
+from ._anvil_designer import Game_FormTemplate
 from anvil import *
 import anvil.google.auth, anvil.google.drive
 from anvil.google.drive import app_files
@@ -10,7 +10,7 @@ import time
 import random
 
 #@main_router
-class Game_Page(Game_PageTemplate):
+class Game_Form(Game_FormTemplate):
   clock = time.time()
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
