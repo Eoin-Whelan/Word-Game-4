@@ -64,7 +64,7 @@ services:
       quotaBytesUsed: '0'
       md5Checksum: d41d8cd98f00b204e9800998ecf8427e
       originalFilename: ''
-      thumbnailLink: https://lh3.googleusercontent.com/ugJaDthmjeF6v-adFzhGUsthZWlxU6L70DwZao7iivz7lBluh1IwbbE81UXQq09VPFTtw_lkCC04XHo=s220
+      thumbnailLink: https://lh3.googleusercontent.com/fF2DsofG3tSwyeBfjH0VkAKRTnquLLZl8c6naVTguG-IIDg-dDwsou9OrgKmb8rhPvXBp0I3YoGA09c=s220
       ownerNames: [Eoin Farrell]
     - capabilities: {canCopy: true, canEdit: true}
       editable: true
@@ -122,7 +122,7 @@ services:
       quotaBytesUsed: '976241'
       md5Checksum: 7d06f540d0a65a46e6d65c5254edb21f
       originalFilename: words.txt
-      thumbnailLink: https://lh3.googleusercontent.com/ye-OnUBCSfVuDBVAMfssntBFn76ioW0y9yBCi9l2u9F-GknGJwWrAJVkAnCIt34JvboxSGaJis2fet8=s220
+      thumbnailLink: https://lh3.googleusercontent.com/0VcB00LWNIOxmPaVQh1dNVwiZPBPbo5B01v99GseminovVmc_TxSmHAgbQvNjMqFu76oOwAoP5PnIUc=s220
       ownerNames: [Eoin Farrell]
   server_config: {delegation_refresh_token: 1//03CKj5VMU0PQ6CgYIARAAGAMSNwF-L9Irfl96flQmnwSDeIndn_L0Jg5eKfCHq_UDLmepwZLYiWhC8BuHgchU9mEqnyWRdLIIZfM}
 startup: {type: form, module: Main_Form}
@@ -148,11 +148,29 @@ db_schema:
     qgzJRV+qpzM=:
       name: time
       type: number
-      admin_ui: {order: 3, width: 119.76666}
+      admin_ui: {order: 3, width: 219.767}
     vDhpgfRkDjA=:
       name: name
       type: string
       admin_ui: {order: 0, width: 200}
   access: {python_name: high_scores, app_id: ZKQQNK6DKV3PVUFL, server: full, client: search,
     table_mapping_name: null, table_mapping_id: null, table_id: 105527}
+- name: user_log
+  id: 106005
+  python_name: user_log
+  columns:
+    Jy3Wzbz0hoU=:
+      name: given_word
+      type: string
+      admin_ui: {order: 1, width: 200}
+    sIeJUpDs2hg=:
+      name: words
+      type: string
+      admin_ui: {order: 2, width: 200}
+    ulOM_U4+DLM=:
+      name: outcome
+      type: string
+      admin_ui: {order: 0, width: 200}
+  access: {python_name: user_log, app_id: ZKQQNK6DKV3PVUFL, server: full, client: none,
+    table_mapping_name: null, table_mapping_id: null, table_id: 106005}
 renamed: true

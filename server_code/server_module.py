@@ -82,21 +82,28 @@ def import_dictionary():
 def return_top_ten():
   high_scores = app_tables.high_scores.search(tables.order_by("time",ascending=True))
   return high_scores
-  print(type(high_scores))
     #.order_by("position", ascending=False)
 
 @anvil.server.callable
 def record_score(name, source_word, record_time, given_words):
+  """
+    When a player successfully completes the game, their game details are passed in:
+    - Name
+    - Source word given by program
+    - Their recorded time
+    - Their input
+    
+    The current scores are pulled in, and their position in the front-end leaderboard is
+    found. The score is recorded and their position is returned to the client before navigating
+    to the leaderboard with that position passed as a parameter. This way, the position doesn't need
+    to be stored but the user knows *their* position via an ascending order by time search.
+  """
+  curr_scores = app_tables.high_scores.search(tables.order_by("time", ascending=True))
+  pos = 1
+  print(record_time)
+  for entry in curr_scores:
+    if entry['time'] > record_time:
+      break;
+    pos +=1
   app_tables.high_scores.add_row(name=name, source_word=source_word, time=record_time,matches=given_words)
-  #high_scores = app_tables.high_scores.search(tables.order_by("time", ascending=True))
-  
-"""
-@anvil.server.http_endpoint("/top10")
-def top10():
-    pattern API endpoint takes an argument passed in via the :pat
-    variable and creates a dictionary of the results. That is returned
-    as a
-    return anvil.http.request(anvil.server.get_app_origin())    #anvil.http.request()
-
-"""
-
+  return pos
