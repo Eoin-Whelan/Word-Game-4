@@ -79,7 +79,7 @@ def import_dictionary():
   return words
   
 @anvil.server.callable
-def return_top_ten():
+def return_leaderboard():
   high_scores = app_tables.high_scores.search(tables.order_by("time",ascending=True))
   return high_scores
     #.order_by("position", ascending=False)
