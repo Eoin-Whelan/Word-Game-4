@@ -21,17 +21,21 @@ class Top_10(Top_10Template):
     
     if(self.url_dict.get('position', '')):
       pos = (self.url_dict.get('position', ''))
-      self.your_pos_label_show()
-      self.pos_label_show(pos)
-      
+      print(type(pos))
+      print(pos)
+      self.your_pos_label_show()      
+      self.pos_label_show()   
 
   def your_pos_label_show(self, **event_args):
     """This method is called when the Label is shown on the screen"""
+    print("Showing label!!!")
+
     pass
 
-  def pos_label_show(self, pos, **event_args):
+  def pos_label_show(self, **event_args):
     """This method is called when the Label is shown on the screen"""
-    self.pos_label.text = pos
+    print("Showing label!!!")
+    self.pos_label.text = self.url_dict.get('position', '')
     pass
 
 
