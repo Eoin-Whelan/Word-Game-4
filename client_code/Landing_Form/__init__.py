@@ -15,7 +15,7 @@ class Landing_Form(Landing_FormTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
     high_scores = app_tables.high_scores.search(tables.order_by("time",ascending=True))
-    anvil.server.call('record_score',"name", "source_word", round(random.uniform(10, 60), 3), "given_words")
+    #anvil.server.call('record_score',"name", "source_word", round(random.uniform(10, 60), 3), "given_words")
 
     # Any code you write here will run when the form opens.
 

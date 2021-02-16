@@ -56,6 +56,13 @@ components:
     properties: {}
     name: flow_panel_1
     layout_properties: {grid_position: 'QSTDGW,SYPIAI'}
+  - type: YouTubeVideo
+    properties: {role: null, loop: true, height: 300, autoplay: true, mute: false,
+      border: '', foreground: '', visible: false, youtube_id: 'https://www.youtube.com/watch?v=VCUAATthl7c',
+      spacing_above: small, duration: 0, spacing_below: small, state: UNKNOWN, volume: 0,
+      current_time: 0, background: ''}
+    name: youtube_video_1
+    layout_properties: {grid_position: 'OTNZVT,IJMRIS'}
 - type: FlowPanel
   properties: {}
   name: navbar_links

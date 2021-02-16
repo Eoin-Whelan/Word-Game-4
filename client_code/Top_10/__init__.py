@@ -9,7 +9,7 @@ from anvil.tables import app_tables
 from HashRouting import routing
 
 @routing.route('top10')
-@routing.route('top10', url_keys =['position'])
+@routing.route('top10', url_keys =['postion'])
 #@routing.route('Top10')
 class Top_10(Top_10Template):
   def __init__(self, **properties):
@@ -17,4 +17,4 @@ class Top_10(Top_10Template):
     self.init_components(**properties)
     self.high_scores.items = anvil.server.call('return_top_ten')
     # Any code you write here will run when the form opens.
-    pos = self.
+    print(self.url_dict['position'])
