@@ -20,22 +20,20 @@ class Top_10(Top_10Template):
     #if self.url_dict.get('position', ''):
     
     if(self.url_dict.get('position', '')):
-      pos = (self.url_dict.get('position', ''))
-      print(type(pos))
-      print(pos)
-      self.your_pos_label_show()      
-      self.pos_label_show()   
-
-  def your_pos_label_show(self, **event_args):
-    """This method is called when the Label is shown on the screen"""
-    print("Showing label!!!")
-
+      self.your_pos_label.text = "Your position is:"
+      self.pos_label.text = self.url_dict.get('position', '') + " out of " + str(len(anvil.server.call('return_leaderboard')))
+    else:
+      self.your_pos_label_hide()
+      self.pos_label_hide()
+      
+  def your_pos_label_hide(self, **event_args):
+    """This method is called when the Label is removed from the screen"""
     pass
 
-  def pos_label_show(self, **event_args):
-    """This method is called when the Label is shown on the screen"""
-    print("Showing label!!!")
-    self.pos_label.text = self.url_dict.get('position', '')
+  def pos_label_hide(self, **event_args):
+    """This method is called when the Label is removed from the screen"""
     pass
+
+
 
 

@@ -13,27 +13,27 @@ components:
   data_bindings: []
   components:
   - type: ColumnPanel
-    properties: {col_widths: '{"QJHNGR":10,"PEDSDL":50}'}
+    properties: {col_widths: '{"QJHNGR":15,"PEDSDL":45}'}
     name: column_panel_2
     layout_properties: {grid_position: 'GEOHZB,HHQCXG'}
     components:
     - type: Label
       properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-        visible: false, text: 'Your position is:', font_size: null, font: '', spacing_above: small,
-        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-        underline: false, icon: ''}
+        visible: true, text: '', font_size: 18, font: '', spacing_above: small, icon_align: left,
+        spacing_below: small, italic: false, background: '', bold: false, underline: false,
+        icon: ''}
       name: your_pos_label
       layout_properties: {grid_position: 'FXHDIM,QJHNGR'}
-      event_bindings: {show: your_pos_label_show}
+      event_bindings: {hide: your_pos_label_hide}
     - type: Label
       properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-        visible: false, text: '', font_size: null, font: '', spacing_above: small,
-        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-        underline: false, icon: ''}
+        visible: true, text: '', font_size: 18, font: '', spacing_above: small, icon_align: left,
+        spacing_below: small, italic: false, background: '', bold: false, underline: false,
+        icon: ''}
       name: pos_label
       layout_properties: {grid_position: 'FXHDIM,PEDSDL'}
       data_bindings: []
-      event_bindings: {show: pos_label_show}
+      event_bindings: {show: pos_label_show, hide: pos_label_hide}
   - type: ColumnPanel
     properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
       wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',

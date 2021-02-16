@@ -16,7 +16,7 @@ class Landing_Form(Landing_FormTemplate):
     self.init_components(**properties)
     high_scores = app_tables.high_scores.search(tables.order_by("time",ascending=True))
     #anvil.server.call('record_score',"name", "source_word", round(random.uniform(10, 60), 3), "given_words")
-
+    print(len(anvil.server.call('return_leaderboard')))
     # Any code you write here will run when the form opens.
 
   def button_1_click(self, **event_args):
