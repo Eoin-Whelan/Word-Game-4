@@ -32,6 +32,4 @@ class Win_Form(Win_FormTemplate):
     set_url_hash(f'top10?position={pos}')
    # set_url_hash('top10', pos)
     routing.reload_page(hard=True)
-    #anvil.server.call('record_score', self.name_box.text, given_word, int(self.player_time_label.text), words)    
-    pass
 

@@ -55,8 +55,9 @@ def submit_answers(user_input, given_word):
     # Are there any "new"/invalid characters in the word?
     [fail_conditions["invalid_chars"].append(letter) for letter in word if letter not in given_word and letter not in fail_conditions['invalid_chars']]
     print(fail_conditions['invalid_chars'])
-
+    print(fail_conditions['invalid_words'])
     # Check for if the word uses any extra charac
+    print(word not in fail_conditions['invalid_words'])
     if word not in fail_conditions['invalid_words']:
       if word in dictionary:
         occurences = occurence_dict(given_word)
@@ -67,6 +68,7 @@ def submit_answers(user_input, given_word):
             fail_conditions['invalid_words'].append(word)
             if letter not in fail_conditions['invalid_chars']:
               fail_conditions['invalid_chars'].append(letter)
+            break
       else:
         fail_conditions['mispelled_words'].append(word)       
           
