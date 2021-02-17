@@ -12,5 +12,5 @@ class Reason_Panel(Reason_PanelTemplate):
     self.init_components(**properties)
 
     self.reason_label.text = reason
-    self.criteria_label.text = "".join(criteria)
+    self.criteria_label.text = ", ".join(criteria)
     # Any code you write here will run when the form opens.

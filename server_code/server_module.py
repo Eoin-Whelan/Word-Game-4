@@ -53,6 +53,8 @@ def submit_answers(user_input, given_word):
       fail_conditions["short_words"].append(word)
     # Are there any "new"/invalid characters in the word?
     [fail_conditions["invalid_chars"].append(letter) for letter in word if letter not in given_word]
+    fail_conditions['invalid_chars'] = set(fail_conditions['invalid_chars'])
+
     # Check for if the word uses any extra charac
     
     occurences = occurence_dict(given_word)
@@ -66,6 +68,8 @@ def submit_answers(user_input, given_word):
       fail_conditions['mispelled_words'].append(word)
           
   print(fail_conditions)
+  fail_conditions['invalid_words'] = set(fail_conditions['invalid_words'])
+
   return fail_conditions
   
 @anvil.server.callable
