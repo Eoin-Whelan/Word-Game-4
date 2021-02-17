@@ -16,7 +16,18 @@ class Fail_Form(Fail_FormTemplate):
         # define the function blocks
 
     for condition in fail_conditions:
-        self.column_panel_1.add_component(Reason_Panel(condition, fail_conditions[condition]))
+            # Set Form properties and Data Bindings.
+      if condition == "short_words" and fail_conditions[condition]:
+        self.column_panel_1.add_component(Reason_Panel("Words were too short: ", fail_conditions[condition]))
+      if condition == "invalid_chars" and fail_conditions[condition]:
+        self.column_panel_1.add_component(Reason_Panel("Use of invalid characters: ", fail_conditions[condition]))
+      if condition == "invalid_words" and fail_conditions[condition]:
+        self.column_panel_1.add_component(Reason_Panel("Non-valid words from source word: ", fail_conditions[condition]))
+      if condition == "mispelled_words" and fail_conditions[condition]:
+        self.column_panel_1.add_component(Reason_Panel("Invalid spelled words: ", fail_conditions[condition]))
+      if condition == "invalid_num":
+        self.column_panel_1.add_component(Reason_Panel("Invalid numer of words submitted: ", str(fail_conditions[condition])))
+      #self.criteria_label.text = criteria
 
 
         # map the inputs to the function blocks
