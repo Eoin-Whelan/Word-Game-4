@@ -19,6 +19,9 @@ class Landing_Form(Landing_FormTemplate):
   def start_btn_click(self, **event_args):
     """This method is called when the button is clicked"""
     self.start_btn.enabled = False
-    set_url_hash("NewGame")
-    routing.reload_page(hard=True)
+    routing.set_url_hash("NewGame", 
+                           replace_current_url=True,
+                           redirect = True
+                          ) 
+
     pass

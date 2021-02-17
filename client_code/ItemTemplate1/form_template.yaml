@@ -1,4 +1,0 @@
-container: {type: ColumnPanel}
-components: []
-is_package: true
-item_type: {table_id: null}

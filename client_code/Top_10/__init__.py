@@ -36,10 +36,10 @@ class Top_10(Top_10Template):
     pass
 
   def play_game_btn_click(self, **event_args):
-    set_url_hash('')
-   # set_url_hash('top10', pos)
-    routing.reload_page(hard=True)
-
+    routing.set_url_hash("NewGame", 
+                           replace_current_url=True,
+                           redirect = True
+                          ) 
 
 
 

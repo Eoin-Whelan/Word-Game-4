@@ -1,4 +1,4 @@
-from ._anvil_designer import Game_FormTemplate
+from ._anvil_designer import Game_Form_DeprecatedTemplate
 from anvil import *
 import anvil.google.auth, anvil.google.drive
 from anvil.google.drive import app_files
@@ -11,7 +11,7 @@ import random
 from HashRouting import routing
 
 
-class Game_Form(Game_FormTemplate):
+class Game_Form_Deprecated(Game_Form_DeprecatedTemplate):
   clock = time.time()
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
