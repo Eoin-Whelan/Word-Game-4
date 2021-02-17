@@ -22,53 +22,57 @@ def submit_answers(user_input, given_word):
   print("Checking answers")
   #print([letter for letter in user_input if letter not in given_word])
   #print(occurences)
-  input_words = user_input.split(" ")
-  print(input_words)
+  #input_words = user_input.split(" ")
+  print(user_input)
   print(given_word)
-  fail_conditions = {"short_words": [],
+  fail_conditions = {
+                      "duplicates" : [],
+                      "short_words": [],
                       "invalid_chars": [],
                       "invalid_words": [],
                       "mispelled_words": []
                       }
   
   # Every fail condition is checked.
-  
+  [fail_conditions['duplicates'].append(word) for word in user_input if user_input.count(word) > 1]
   # Append any word that has differentiating characters to the original
-  [fail_conditions['invalid_words'].append(word) for word in input_words if not all(letter in given_word for letter in word)]
+  [fail_conditions['invalid_words'].append(word) for word in user_input if not all(letter in given_word for letter in word)]
   """
   List comprehension that appends
   """
-  
+  print(fail_conditions, "\n\n\n")
   # Did the user input 7 words?
-  if len(input_words) != 7:
+  if len(user_input) != 7:
     print("Invalid Num of words!")
-    fail_conditions.update({"invalid_num": len(input_words)})
+    fail_conditions.update({"invalid_num": len(user_input)})
   dictionary = import_dictionary()
   # Go through each word the user input
-  for word in input_words:
+  for word in user_input:
     #print(all(letter in given_word for letter in word))
     # Is the word less than 4?
     if len(word) < 4:
-      print("Invalid Length of word!")
       fail_conditions["short_words"].append(word)
     # Are there any "new"/invalid characters in the word?
-    [fail_conditions["invalid_chars"].append(letter) for letter in word if letter not in given_word]
-    fail_conditions['invalid_chars'] = set(fail_conditions['invalid_chars'])
+    [fail_conditions["invalid_chars"].append(letter) for letter in word if letter not in given_word and letter not in fail_conditions['invalid_chars']]
+    print(fail_conditions['invalid_chars'])
 
     # Check for if the word uses any extra charac
-    
-    occurences = occurence_dict(given_word)
-    for letter in word:
-      if letter in occurences:
-        occurences[letter] -= 1
-      if any(value < 0 for value in occurences.values()):
-        fail_conditions['invalid_words'].append(word)
-        
-    if word not in dictionary:
-      fail_conditions['mispelled_words'].append(word)
+    if word not in fail_conditions['invalid_words']:
+      if word in dictionary:
+        occurences = occurence_dict(given_word)
+        for letter in word:
+          if letter in occurences:
+            occurences[letter] -= 1
+          if any(value < 0 for value in occurences.values()):
+            fail_conditions['invalid_words'].append(word)
+            if letter not in fail_conditions['invalid_chars']:
+              fail_conditions['invalid_chars'].append(letter)
+      else:
+        fail_conditions['mispelled_words'].append(word)       
           
   print(fail_conditions)
-  fail_conditions['invalid_words'] = set(fail_conditions['invalid_words'])
+  #fail_conditions['invalid_words'] = set(fail_conditions['invalid_words'])
+  #fail_conditions['invalid_words'] = list(fail_conditions['invalid_words'])
 
   return fail_conditions
   

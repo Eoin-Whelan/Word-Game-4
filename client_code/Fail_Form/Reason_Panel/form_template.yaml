@@ -11,8 +11,4 @@ components:
     properties: {}
     name: reason_label
     layout_properties: {grid_position: 'NKZKGH,LDZFOP'}
-- type: Label
-  properties: {}
-  name: criteria_label
-  layout_properties: {grid_position: 'DKIWDM,BYHQID'}
 is_package: true

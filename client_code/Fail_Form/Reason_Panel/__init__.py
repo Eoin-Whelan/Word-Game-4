@@ -8,9 +8,8 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 
 class Reason_Panel(Reason_PanelTemplate):
-  def __init__(self, reason, criteria, **properties):
+  def __init__(self, reason, **properties):
     self.init_components(**properties)
 
     self.reason_label.text = reason
-    self.criteria_label.text = ", ".join(criteria)
     # Any code you write here will run when the form opens.
