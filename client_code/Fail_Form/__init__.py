@@ -40,7 +40,12 @@ class Fail_Form(Fail_FormTemplate):
     """This method is called when the button is clicked"""
     self.restart_btn.enabled = False
     self.rules_btn.enabled = False
-    open_form('Game_Form')
+    set_url_hash("NewGame")
+    routing.reload_page(hard=True)
+    #    set_url_hash('NewGame')
+
+
+
 
 
   def rules_btn_click(self, **event_args):
@@ -48,6 +53,5 @@ class Fail_Form(Fail_FormTemplate):
     self.restart_btn.enabled = False
     self.rules_btn.enabled = False
     set_url_hash("")
-   # set_url_hash('top10', pos)
     routing.reload_page(hard=True)
 

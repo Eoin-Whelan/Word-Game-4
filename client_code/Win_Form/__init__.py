@@ -20,6 +20,7 @@ class Win_Form(Win_FormTemplate):
     global source_word
     source_word = given_word
     global word_matches
+    print(type(words))
     word_matches = words
 
     self.player_time_label.text = time
@@ -28,7 +29,7 @@ class Win_Form(Win_FormTemplate):
     
 
   def button_1_click(self, **event_args):
-    pos = anvil.server.call('record_score', self.name_box.text, source_word, round(float(self.player_time_label.text), 3), word_matches)    
+    pos = anvil.server.call('record_score', self.name_box.text, source_word, round(float(self.player_time_label.text), 3), ", ".join(word_matches)) 
     set_url_hash(f'top10?position={pos}')
    # set_url_hash('top10', pos)
     routing.reload_page(hard=True)

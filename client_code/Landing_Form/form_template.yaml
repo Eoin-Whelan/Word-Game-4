@@ -103,6 +103,16 @@ components:
     name: label_9
     layout_properties: {grid_position: 'ZHGBEY,YDZPBO'}
   - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: '7. Each word is separated by a space! (e.g. Paul John
+        Ringo not Paul, John, Ringo)', font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: label_9_copy
+    layout_properties:
+      col_widths: {}
+      grid_position: KATSUK,TCFXVR
+  - type: Label
     properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
       visible: true, text: 'Note:', font_size: null, font: '', spacing_above: small,
       icon_align: left, spacing_below: small, italic: false, background: '', bold: true,

@@ -19,5 +19,6 @@ class Landing_Form(Landing_FormTemplate):
   def start_btn_click(self, **event_args):
     """This method is called when the button is clicked"""
     self.start_btn.enabled = False
-    anvil.open_form('Game_Form')
+    set_url_hash("NewGame")
+    routing.reload_page(hard=True)
     pass

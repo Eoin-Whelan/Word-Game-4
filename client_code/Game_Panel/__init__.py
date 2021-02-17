@@ -1,17 +1,19 @@
-from ._anvil_designer import Game_FormTemplate
+from ._anvil_designer import Game_PanelTemplate
 from anvil import *
+import anvil.server
 import anvil.google.auth, anvil.google.drive
 from anvil.google.drive import app_files
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
-import anvil.server
 import time
 import random
+
 from HashRouting import routing
 
 
-class Game_Form(Game_FormTemplate):
+@routing.route('NewGame')
+class Game_Panel(Game_PanelTemplate):
   clock = time.time()
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
@@ -40,13 +42,12 @@ class Game_Form(Game_FormTemplate):
         open_form('Fail_Form', fail_conditions)
       else:
         print(round(self.clock, 3))
+        self.clock(0)
         open_form('Win_Form', self.random_word.text, words, round(self.clock, 3))
 
   def timer_1_tick(self, **event_args):
     """This method is called Every [interval] seconds. Does not trigger if [interval] is 0."""
     self.clock += 0.001
     pass
-
-
 
 

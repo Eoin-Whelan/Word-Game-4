@@ -16,6 +16,8 @@ from ..Game_Form import Game_Form
 from ..Top_10 import Top_10
 from ..Win_Form import Win_Form
 from ..Landing_Form import Landing_Form
+from ..Leaderboard_Panel import Leaderboard_Panel
+from ..Game_Panel import Game_Panel
 
 @routing.main_router
 class Main_Form(Main_FormTemplate):
