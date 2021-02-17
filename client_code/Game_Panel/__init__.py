@@ -44,7 +44,12 @@ class Game_Panel(Game_PanelTemplate):
         open_form('Fail_Form', fail_conditions)
       else:
         print(round(self.clock, 3))
+        #routing.load_form("WinPanel")
         open_form('Win_Form', self.random_word.text, words, round(self.clock, 3))
+        routing.set_url_hash(f'top10?position={pos}', 
+                              replace_current_url=True,
+                              redirect = True
+                              )
 
   def timer_1_tick(self, **event_args):
     """This method is called Every [interval] seconds. Does not trigger if [interval] is 0."""
