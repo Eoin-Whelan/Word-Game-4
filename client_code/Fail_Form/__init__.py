@@ -15,15 +15,15 @@ class Fail_Form(Fail_FormTemplate):
 
     for condition in fail_conditions:
       if condition == "duplicates" and fail_conditions[condition]:
-        self.column_panel_1.add_component(Reason_Panel(f"You have duplicates in your list: {' '.join(fail_conditions[condition])}"))
+        self.column_panel_1.add_component(Reason_Panel(f"You have duplicates in your list: {', '.join(fail_conditions[condition])}"))
       if condition == "short_words" and fail_conditions[condition]:
-        self.column_panel_1.add_component(Reason_Panel(f"These words were too small: {' '.join(fail_conditions[condition])}"))
+        self.column_panel_1.add_component(Reason_Panel(f"These words were too small: {', '.join(fail_conditions[condition])}"))
       if condition == "invalid_chars" and fail_conditions[condition]:
-        self.column_panel_1.add_component(Reason_Panel(f"You used these invalid letters: {' '.join(fail_conditions[condition])}"))
+        self.column_panel_1.add_component(Reason_Panel(f"You used these invalid/extra letters: {', '.join(fail_conditions[condition])}"))
       if condition == "invalid_words" and fail_conditions[condition]:
-        self.column_panel_1.add_component(Reason_Panel(f"You submitted these words using extra/invalid letters different from the source word: {fail_conditions[condition]}"))
+        self.column_panel_1.add_component(Reason_Panel(f"You submitted these words using extra/invalid letters different from the source word: {', '.join(fail_conditions[condition])}"))
       if condition == "mispelled_words" and fail_conditions[condition]:
-        self.column_panel_1.add_component(Reason_Panel(f"You mispelled these words: {' '.join(fail_conditions[condition])}"))
+        self.column_panel_1.add_component(Reason_Panel(f"You mispelled these words: {', '.join(fail_conditions[condition])}"))
       if condition == "invalid_num":
         self.column_panel_1.add_component(Reason_Panel(f"You submitted an incorrect number of words: {' '.join(str(fail_conditions[condition]))}, not 7"))
       #self.criteria_label.text = criteria

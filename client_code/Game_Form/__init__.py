@@ -22,11 +22,14 @@ class Game_Form(Game_FormTemplate):
 
   def submit_btn_click(self, **event_args):
     """This method is called when the button is clicked"""
+    self.submit_btn.enabled = False
     words = list(filter(None, self.user_input_box.text.lower().split(" ")))
 
     if not words:
       self.user_input_box.text = None
       self.user_input_box.placeholder = "You need to *actually* put words in here, not just spaces. Time is ticking!"
+      self.submit_btn.enabled = True
+
     else:
       self.clock = time.time() - self.clock
       #words = "towing towel wing goat twong toe nile"

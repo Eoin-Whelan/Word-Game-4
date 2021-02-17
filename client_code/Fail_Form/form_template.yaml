@@ -29,8 +29,8 @@ components:
     layout_properties: {grid_position: 'SUHCUB,NBFTDK'}
   - type: Label
     properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: 'Here''s what went wrong:', font_size: null, font: '',
-      spacing_above: small, icon_align: left, spacing_below: medium, italic: false,
-      background: '', bold: false, underline: false, icon: ''}
+      visible: true, text: 'Here''s what went wrong:', font_size: 24, font: '', spacing_above: small,
+      icon_align: left, spacing_below: large, italic: false, background: '', bold: true,
+      underline: false, icon: ''}
     name: label_2
     layout_properties: {grid_position: 'WVRVZQ,FBVQOW'}
