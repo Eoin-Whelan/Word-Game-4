@@ -21,6 +21,7 @@ class Top_10(Top_10Template):
     
     if(self.url_dict.get('position', '')):
       self.your_pos_label.text = "Your position is:"
+      self.play_game_btn.text = "Would you like to play again?"
       self.pos_label.text = self.url_dict.get('position', '') + " out of " + str(len(anvil.server.call('return_leaderboard')))
     else:
       self.your_pos_label_hide()
@@ -33,6 +34,12 @@ class Top_10(Top_10Template):
   def pos_label_hide(self, **event_args):
     """This method is called when the Label is removed from the screen"""
     pass
+
+  def play_game_btn_click(self, **event_args):
+    set_url_hash('')
+   # set_url_hash('top10', pos)
+    routing.reload_page(hard=True)
+
 
 
 
