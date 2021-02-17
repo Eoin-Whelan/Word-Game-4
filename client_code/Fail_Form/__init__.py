@@ -15,12 +15,6 @@ class Fail_Form(Fail_FormTemplate):
       
       self.init_components(**properties)
   
-      if not fail_conditions:
-        routing.set_url_hash("",
-                              replace_current_url=True,
-                              redirect = True,
-                              load_from_cache= False
-                              ) 
       for condition in fail_conditions:
         if condition == "duplicates" and fail_conditions[condition]:
           self.reasons_column_panel.add_component(Reason_Panel(f"You have duplicates in your list: {', '.join(fail_conditions[condition])}"))

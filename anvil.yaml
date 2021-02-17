@@ -145,11 +145,11 @@ db_schema:
     K3kghvWXZ6Y=:
       name: matches
       type: string
-      admin_ui: {order: 4, width: 356.53366}
+      admin_ui: {order: 4, width: 440.533}
     qgzJRV+qpzM=:
       name: time
       type: number
-      admin_ui: {order: 3, width: 219.767}
+      admin_ui: {order: 3, width: 196.767}
     vDhpgfRkDjA=:
       name: name
       type: string
