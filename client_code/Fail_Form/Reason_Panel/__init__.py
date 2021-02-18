@@ -19,5 +19,4 @@ from anvil.tables import app_tables
 class Reason_Panel(Reason_PanelTemplate):
   def __init__(self, reason, **properties):
     self.init_components(**properties)
-
     self.reason_label.text = reason

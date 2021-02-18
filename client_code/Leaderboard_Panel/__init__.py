@@ -29,6 +29,7 @@ class Leaderboard_Panel(Leaderboard_PanelTemplate):
       self.your_pos_label.text = "Your position is:"
       self.play_game_btn.text = "Would you like to play again?"
       self.pos_label.text = self.url_dict.get('position', '') + " out of " + str(len(anvil.server.call('return_leaderboard')))
+      set_url_hash('top10')
     else:
       self.your_pos_label_hide()
       self.pos_label_hide()

@@ -1,8 +1,11 @@
 """
-  Title:
-  Author:
-  Student No:
-  Purpose:
+  Title:      Game_Panel
+  Author:     Eoin Farrell
+  Student No: C00164354
+  Purpose:    Game_Panel is the main panel for Word Game 4.
+              User enters a word, which is then passed to either
+              a pass or fail form depending on fail conditions
+              being met.
 """
 
 from ._anvil_designer import Game_PanelTemplate
@@ -28,7 +31,6 @@ class Game_Panel(Game_PanelTemplate):
     given_word = random.choice([word for word in anvil.server.call('import_dictionary') if len(word) >= 8])
     self.random_word.text = given_word
     self.clock = time.time()
-    # Any code you write here will run when the form opens.
 
   def submit_btn_click(self, **event_args):
     """This method is called when the button is clicked"""

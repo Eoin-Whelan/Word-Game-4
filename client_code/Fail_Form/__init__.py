@@ -4,6 +4,10 @@
   Student No: C00164354
   Purpose:    Fail_Form is the page on which the user's incorrect input is
               displayed back as criteria for their failed attempt.
+              
+              Note: FailForm is not a URL routing path as including it as such
+              using the parameter passing methods I have in others would allow
+              spoofing of valid player entries.
 """
 
 from ._anvil_designer import Fail_FormTemplate
@@ -22,7 +26,11 @@ class Fail_Form(Fail_FormTemplate):
       # Set Form properties and Data Bindings.
       
       self.init_components(**properties)
-  
+      """
+        Loops acts similary to a switch statement by generating a panel
+        containing a label stating the fail condition the player's input
+        met.
+      """
       for condition in fail_conditions:
         if condition == "duplicates" and fail_conditions[condition]:
           self.reasons_column_panel.add_component(Reason_Panel(f"You have duplicates in your list: {', '.join(fail_conditions[condition])}"))
@@ -36,23 +44,24 @@ class Fail_Form(Fail_FormTemplate):
           self.reasons_column_panel.add_component(Reason_Panel(f"You mispelled these words: {', '.join(fail_conditions[condition])}"))
         if condition == "invalid_num":
           self.reasons_column_panel.add_component(Reason_Panel(f"You submitted an incorrect number of words: {' '.join(str(fail_conditions[condition]))}, not 7"))
-        #self.criteria_label.text = criteria
-  
-  
-          # map the inputs to the function blocks
-      
-          # Any code you write here will run when the form opens.
       
   
   def restart_btn_click(self, **event_args):
-    """This method is called when the button is clicked"""
+    """
+      When the user wishes to play the game again, the game
+      is refreshed given the URL route will still fall under
+      the #NewGame route.
+    """
     self.restart_btn.enabled = False
     self.rules_btn.enabled = False
     routing.reload_page(hard=True)
 
 
   def rules_btn_click(self, **event_args):
-    """This method is called when the button is clicked"""
+    """
+      Entire application is restarted, thereby reverting the
+      player back to the rules/landing page.
+    """
     self.restart_btn.enabled = False
     self.rules_btn.enabled = False
     routing.set_url_hash("")
