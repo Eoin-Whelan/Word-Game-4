@@ -43,8 +43,16 @@ class Leaderboard_Panel(Leaderboard_PanelTemplate):
     pass
 
   def play_game_btn_click(self, **event_args):
+    set_url_hash('NewGame')
+    routing.reload_page(hard=True)
+
+  def restart_btn_click(self, **event_args):
     set_url_hash('')
    # set_url_hash('top10', pos)
     routing.reload_page(hard=True)
+
+
+
+
 
 
