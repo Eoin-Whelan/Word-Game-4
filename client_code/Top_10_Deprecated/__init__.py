@@ -1,4 +1,4 @@
-from ._anvil_designer import Top_10Template
+from ._anvil_designer import Top_10_DeprecatedTemplate
 from anvil import *
 import anvil.server
 import anvil.google.auth, anvil.google.drive
@@ -11,7 +11,7 @@ from HashRouting import routing
 @routing.route('top10')
 @routing.route('top10', url_keys=['position'])
 #@routing.route('Top10')
-class Top_10(Top_10Template):
+class Top_10_Deprecated(Top_10_DeprecatedTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)

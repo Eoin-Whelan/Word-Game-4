@@ -160,14 +160,26 @@ db_schema:
   id: 106005
   python_name: user_log
   columns:
+    HSBfx2oPL7Y=:
+      name: date_time
+      type: datetime
+      admin_ui: {order: 3, width: 200}
     Jy3Wzbz0hoU=:
       name: given_word
       type: string
       admin_ui: {order: 1, width: 200}
+    lNp0iP6P2BQ=:
+      name: ip
+      type: string
+      admin_ui: {order: 4, width: 200}
     sIeJUpDs2hg=:
       name: words
       type: string
       admin_ui: {order: 2, width: 200}
+    uLfsYKCs3ok=:
+      name: browser
+      type: string
+      admin_ui: {order: 5, width: 200}
     ulOM_U4+DLM=:
       name: outcome
       type: string

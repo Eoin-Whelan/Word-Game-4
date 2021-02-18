@@ -8,7 +8,6 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 from HashRouting import routing
 import anvil.http
-from ..Top_10 import Top_10
 
 
 class Win_Form(Win_FormTemplate):
@@ -39,4 +38,5 @@ class Win_Form(Win_FormTemplate):
                            replace_current_url=True,
                            redirect = True
                           ) 
+    routing.reload_page(hard=True)
 

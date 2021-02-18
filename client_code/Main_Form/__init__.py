@@ -12,8 +12,6 @@ import time
 from HashRouting import routing
 
 from ..Fail_Form import Fail_Form
-#from ..Game_Form import Game_Form
-from ..Top_10 import Top_10
 from ..Win_Form import Win_Form
 from ..Landing_Form import Landing_Form
 from ..Leaderboard_Panel import Leaderboard_Panel
@@ -25,3 +23,6 @@ class Main_Form(Main_FormTemplate):
   def __init__(self, **properties):
       # Set Form properties and Data Bindings.
     self.init_components(**properties)
+    #anvil.server.call('log_attempt')
+    type(anvil.http.request(anvil.server.get_api_origin() + '/get-user-agent'))
+    #print(anvil.http.request(anvil.server.get_api_origin() + '/get-user-agent'))

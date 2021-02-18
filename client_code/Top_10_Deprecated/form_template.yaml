@@ -107,7 +107,7 @@ components:
         layout_properties: {grid_position: 'JRYTMP,CAUPTX'}
     - type: RepeatingPanel
       properties: {role: null, tooltip: '', border: '', foreground: '', items: null,
-        visible: true, spacing_above: small, spacing_below: small, item_template: Top_10.leaderboard_rows,
+        visible: true, spacing_above: small, spacing_below: small, item_template: Top_10_Deprecated.leaderboard_rows,
         background: ''}
       name: high_scores
       layout_properties: {grid_position: 'LKDUAI,SNUURA'}

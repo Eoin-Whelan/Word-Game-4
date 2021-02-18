@@ -6,8 +6,19 @@ from anvil.tables import app_tables
 import anvil.server
 from anvil.google.drive import app_files
 import anvil.http
+import datetime
 
- 
+@anvil.server.callable
+def log_attempt(outcome, given_word, user_input, user_agent):
+  # params: outcome, given_word, user_input
+  
+  timestamp = datetime.datetime.now()
+  #user_agent = anvil.http.request(get_user_agent()() + '/get-user-agent')
+  timestamp_str = f'{timestamp.strftime("%c")} - {anvil.server.context.client.ip} - {anvil.server.request.headers["user-agent"]}'
+
+  print(timestamp_str)
+  pass
+  
       
 @anvil.server.callable
 def occurence_dict(word):
@@ -117,3 +128,7 @@ def record_score(name, source_word, record_time, given_words):
     pos +=1
   app_tables.high_scores.add_row(name=name, source_word=source_word, time=record_time,matches=given_words)
   return pos
+
+@anvil.server.http_endpoint('/get-user-agent')
+def get_user_agent():
+  print(anvil.server.request.headers['user-agent'].get_bytes())

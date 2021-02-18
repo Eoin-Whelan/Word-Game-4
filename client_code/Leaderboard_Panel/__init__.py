@@ -8,7 +8,8 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 from HashRouting import routing
 
-@routing.route('topten')
+@routing.route('top10')
+@routing.route('top10', url_keys=['position'])
 class Leaderboard_Panel(Leaderboard_PanelTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
