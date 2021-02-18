@@ -1,11 +1,13 @@
 container:
   type: ColumnPanel
-  properties: {col_widths: '{}'}
+  properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
+    wrap_on: mobile, col_spacing: medium, spacing_above: none, col_widths: '{}', spacing_below: none,
+    background: ''}
 components:
 - type: Label
   properties: {role: headline, align: left, tooltip: '', border: '', foreground: '',
-    visible: true, text: Top 10 Wordsters in the West, font_size: 32, font: '', spacing_above: small,
-    icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+    visible: true, text: Top 10 Wordsters in the West, font_size: 28, font: '', spacing_above: none,
+    icon_align: left, spacing_below: none, italic: false, background: '', bold: true,
     underline: false, icon: ''}
   name: label_6
   layout_properties: {grid_position: 'VBPWHI,DOLVKR'}
@@ -64,68 +66,74 @@ components:
       event_bindings: {click: play_game_btn_click}
   - type: ColumnPanel
     properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
-      wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
-      spacing_below: small, background: ''}
+      wrap_on: mobile, col_spacing: medium, spacing_above: none, col_widths: '{}',
+      spacing_below: none, background: ''}
     name: column_panel_1
     layout_properties: {grid_position: 'MYJRUT,FAAIBW'}
     components:
     - type: FlowPanel
-      properties: {}
+      properties: {role: null, spacing: medium, align: left, tooltip: '', border: '',
+        foreground: '', visible: true, spacing_above: none, spacing_below: none, background: ''}
       name: flow_panel_1
       layout_properties: {grid_position: 'FEOCNY,XBSDEK'}
       components:
       - type: Spacer
-        properties: {height: 32}
+        properties: {visible: true, spacing_above: none, spacing_below: none, height: 32,
+          tooltip: ''}
         name: spacer_5
         layout_properties: {grid_position: 'MYJRUT,LSLWPK', width: 25}
       - type: Label
         properties: {role: headline, align: center, tooltip: '', border: '', foreground: '',
-          visible: true, text: Position, font_size: 24, font: '', spacing_above: small,
-          icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+          visible: true, text: Position, font_size: 24, font: '', spacing_above: none,
+          icon_align: left, spacing_below: none, italic: false, background: '', bold: false,
           underline: false, icon: ''}
         name: label_1
         layout_properties: {column: null, grid_position: 'VUZGEJ,PSCUVF'}
       - type: Spacer
-        properties: {height: 32}
+        properties: {visible: true, spacing_above: none, spacing_below: none, height: 32,
+          tooltip: ''}
         name: spacer_1
         layout_properties: {width: 68}
       - type: Label
         properties: {role: headline, align: left, tooltip: '', border: '', foreground: '',
-          visible: true, text: Name, font_size: 24, font: '', spacing_above: small,
-          icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+          visible: true, text: Name, font_size: 24, font: '', spacing_above: none,
+          icon_align: left, spacing_below: none, italic: false, background: '', bold: false,
           underline: false, icon: ''}
         name: label_2
         layout_properties: {grid_position: 'DCPDMW,VIUFGB'}
       - type: Spacer
-        properties: {height: 32}
+        properties: {visible: true, spacing_above: none, spacing_below: none, height: 32,
+          tooltip: ''}
         name: spacer_2
         layout_properties: {width: 42}
       - type: Label
         properties: {role: headline, align: left, tooltip: '', border: '', foreground: '',
-          visible: true, text: Source Word, font_size: 24, font: '', spacing_above: small,
-          icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+          visible: true, text: Source Word, font_size: 24, font: '', spacing_above: none,
+          icon_align: left, spacing_below: none, italic: false, background: '', bold: false,
           underline: false, icon: ''}
         name: label_3
         layout_properties: {grid_position: 'JRYTMP,RQNAUW'}
       - type: Spacer
-        properties: {height: 32}
+        properties: {visible: true, spacing_above: none, spacing_below: none, height: 32,
+          tooltip: ''}
         name: spacer_3
         layout_properties: {width: 65}
       - type: Label
         properties: {role: headline, align: left, tooltip: '', border: '', foreground: '',
-          visible: true, text: Record Time, font_size: 24, font: '', spacing_above: small,
-          icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+          visible: true, text: Record Time, font_size: 24, font: '', spacing_above: none,
+          icon_align: left, spacing_below: none, italic: false, background: '', bold: false,
           underline: false, icon: ''}
         name: label_4
         layout_properties: {grid_position: 'JRYTMP,ALEOCO'}
       - type: Spacer
-        properties: {height: 32}
+        properties: {visible: true, spacing_above: none, spacing_below: none, height: 32,
+          tooltip: ''}
         name: spacer_4
         layout_properties: {width: 54}
       - type: Label
         properties: {role: headline, align: left, tooltip: '', border: '', foreground: '',
-          visible: true, text: Matches, font_size: 24, font: '', spacing_above: small,
-          icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+          visible: true, text: Matches, font_size: 24, font: '', spacing_above: none,
+          icon_align: left, spacing_below: none, italic: false, background: '', bold: false,
           underline: false, icon: ''}
         name: label_5
         layout_properties: {grid_position: 'JRYTMP,CAUPTX'}

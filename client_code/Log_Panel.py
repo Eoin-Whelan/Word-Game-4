@@ -13,7 +13,7 @@ class Log_Panel(Log_PanelTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-    self.repeating_panel_1.items = anvil.server.call('return_log')
+    self.row_panel.items = anvil.server.call('return_log')
     # Any code you write here will run when the form opens.
     #if self.url_dict.get('position', ''):
     

@@ -1,3 +1,11 @@
+"""
+  Title:      Fail_Form
+  Author:     Eoin Farrell
+  Student No: C00164354
+  Purpose:    Fail_Form is the page on which the user's incorrect input is
+              displayed back as criteria for their failed attempt.
+"""
+
 from ._anvil_designer import Fail_FormTemplate
 from anvil import *
 import anvil.server

@@ -1,3 +1,12 @@
+"""
+  Title:      Reason_Panel
+  Author:     Eoin Farrell
+  Student No: C00164354
+  Purpose:    Reason_Panel is the template for panels on the
+              label component added potentially numerous times
+              on the Fail_Form's reasons_panel.
+"""
+
 from ._anvil_designer import Reason_PanelTemplate
 from anvil import *
 import anvil.server
@@ -12,4 +21,3 @@ class Reason_Panel(Reason_PanelTemplate):
     self.init_components(**properties)
 
     self.reason_label.text = reason
-    # Any code you write here will run when the form opens.

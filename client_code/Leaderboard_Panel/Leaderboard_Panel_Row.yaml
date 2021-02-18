@@ -1,15 +1,15 @@
 components:
 - type: Label
   properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
-    visible: true, text: '', font_size: 18, font: '', spacing_above: small, icon_align: left,
-    spacing_below: small, italic: false, background: '', bold: false, underline: false,
+    visible: true, text: '', font_size: 14, font: '', spacing_above: none, icon_align: left,
+    spacing_below: none, italic: false, background: '', bold: false, underline: false,
     icon: ''}
   name: pos_label
   layout_properties: {column: null, grid_position: 'IUUZDY,PQUGCV'}
   data_bindings: []
 - type: Label
   properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
-    text: '', font_size: 18, font: '', spacing_above: small, icon_align: left, spacing_below: small,
+    text: '', font_size: 14, font: '', spacing_above: none, icon_align: left, spacing_below: none,
     italic: false, background: '', bold: false, underline: false, icon: ''}
   name: name_label
   layout_properties: {grid_position: 'IUUZDY,WYNTGW'}
@@ -17,7 +17,7 @@ components:
   - {property: text, code: 'self.item[''name'']'}
 - type: Label
   properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
-    text: '', font_size: 18, font: '', spacing_above: small, icon_align: left, spacing_below: small,
+    text: '', font_size: 14, font: '', spacing_above: none, icon_align: left, spacing_below: none,
     italic: false, background: '', bold: false, underline: false, icon: ''}
   name: source_word_label
   layout_properties: {grid_position: 'IUUZDY,KSDUMO'}
@@ -25,7 +25,7 @@ components:
   - {property: text, code: 'self.item[''source_word'']'}
 - type: Label
   properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
-    text: '', font_size: 18, font: '', spacing_above: small, icon_align: left, spacing_below: small,
+    text: '', font_size: 14, font: '', spacing_above: none, icon_align: left, spacing_below: none,
     italic: false, background: '', bold: false, underline: false, icon: ''}
   name: record_label
   layout_properties: {grid_position: 'IUUZDY,QXPGRO'}
@@ -33,7 +33,7 @@ components:
   - {property: text, code: 'self.item[''time'']'}
 - type: Label
   properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
-    text: '', font_size: 18, font: '', spacing_above: small, icon_align: left, spacing_below: small,
+    text: '', font_size: 14, font: '', spacing_above: none, icon_align: left, spacing_below: none,
     italic: false, background: '', bold: false, underline: false, icon: ''}
   name: answers_label
   layout_properties: {grid_position: 'IUUZDY,WUMEML'}

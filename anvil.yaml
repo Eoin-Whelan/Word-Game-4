@@ -131,6 +131,7 @@ allow_embedding: false
 name: Word Game 4 2000
 runtime_options: {version: 2, client_version: '3', server_version: python3-full}
 metadata: {}
+startup_form: Main_Form
 native_deps: {head_html: ''}
 db_schema:
 - name: high_scores
@@ -183,6 +184,6 @@ db_schema:
       name: outcome
       type: string
       admin_ui: {order: 0, width: 200}
-  access: {python_name: user_log, app_id: ZKQQNK6DKV3PVUFL, server: full, client: none,
+  access: {python_name: user_log, app_id: ZKQQNK6DKV3PVUFL, server: full, client: search,
     table_mapping_name: null, table_mapping_id: null, table_id: 106005}
 renamed: true

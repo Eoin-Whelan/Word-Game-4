@@ -1,3 +1,10 @@
+"""
+  Title:
+  Author:
+  Student No:
+  Purpose:
+"""
+
 from ._anvil_designer import Leaderboard_PanelTemplate
 from anvil import *
 import anvil.server

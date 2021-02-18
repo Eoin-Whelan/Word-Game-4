@@ -37,7 +37,7 @@ components:
         tooltip: ''
         border: ''
         foreground: ''
-        rows_per_page: 20
+        rows_per_page: 10
         visible: true
         show_page_controls: true
         spacing_above: small
@@ -47,8 +47,8 @@ components:
       layout_properties: {grid_position: 'XRSNLI,SCGDNY'}
       components:
       - type: RepeatingPanel
-        properties: {spacing_above: none, spacing_below: none, item_template: RowTemplate1}
-        name: repeating_panel_1
+        properties: {spacing_above: none, spacing_below: none, item_template: Log_Panel_Data_Row}
+        name: row_panel
         layout_properties: {}
       data_bindings: []
 container:
