@@ -38,11 +38,11 @@ class Game_Panel(Game_PanelTemplate):
       self.clock = time.time() - self.clock
       fail_conditions = anvil.server.call('submit_answers', words, self.random_word.text)
       if any(fail_conditions.values()):
-        anvil.server.call('log_attempt', "!!! ERRORS", self.random_word.text, words)
+        anvil.server.call('log_attempt', "!!! ERRORS", self.random_word.text, words, anvil.http.request(anvil.server.get_api_origin() + '/get-user-agent').get_bytes().decode('utf-8'))
         open_form('Fail_Form', fail_conditions)
       else:
         print(round(self.clock, 3))
-        anvil.server.call('log_attempt', "SUCCESS", self.random_word.text, words, anvil.http.request(anvil.server.get_api_origin() + '/get-user-agent', json=True))
+        anvil.server.call('log_attempt', "SUCCESS", self.random_word.text, words, anvil.http.request(anvil.server.get_api_origin() + '/get-user-agent').get_bytes().decode('utf-8'))
         open_form('Win_Form', self.random_word.text, words, round(self.clock, 3))
 
 

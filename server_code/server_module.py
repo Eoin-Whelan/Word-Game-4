@@ -11,12 +11,10 @@ import datetime
 @anvil.server.callable
 def log_attempt(outcome, given_word, user_input, user_agent):
   # params: outcome, given_word, user_input
-  
-  timestamp = datetime.datetime.now()
+  timestamp = datetime.datetime.now().strftime("%c")
   #user_agent = anvil.http.request(get_user_agent()() + '/get-user-agent')
-  timestamp_str = f'{timestamp.strftime("%c")} - {anvil.server.context.client.ip} - {anvil.server.request.headers["user-agent"]}'
-
-  print(timestamp_str)
+  #timestamp_str = f'{outcome}: {given_word} - {", ".join(user_input)} \n{timestamp.strftime("%c")} - {user_agent}'
+  app_tables.user_log.add_row(outcome=outcome, given_word=given_word, words=f'{", ".join(user_input)}', ip=anvil.server.context.client.ip, browser=user_agent, date_time=datetime.datetime.strptime(timestamp, '%c'))
   pass
   
       
@@ -104,6 +102,11 @@ def return_leaderboard():
   high_scores = app_tables.high_scores.search(tables.order_by("time",ascending=True))
   return high_scores
     #.order_by("position", ascending=False)
+@anvil.server.callable
+def return_log():
+  log = app_tables.user_log.search(tables.order_by("date_time",ascending=True))
+  return log
+
 
 @anvil.server.callable
 def record_score(name, source_word, record_time, given_words):
@@ -131,4 +134,4 @@ def record_score(name, source_word, record_time, given_words):
 
 @anvil.server.http_endpoint('/get-user-agent')
 def get_user_agent():
-  print(anvil.server.request.headers['user-agent'].get_bytes())
+  return anvil.server.request.headers['user-agent']

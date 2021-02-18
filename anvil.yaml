@@ -131,7 +131,6 @@ allow_embedding: false
 name: Word Game 4 2000
 runtime_options: {version: 2, client_version: '3', server_version: python3-full}
 metadata: {}
-startup_form: Fail_Form
 native_deps: {head_html: ''}
 db_schema:
 - name: high_scores
@@ -163,7 +162,7 @@ db_schema:
     HSBfx2oPL7Y=:
       name: date_time
       type: datetime
-      admin_ui: {order: 3, width: 200}
+      admin_ui: {order: 3, width: 267}
     Jy3Wzbz0hoU=:
       name: given_word
       type: string
@@ -179,7 +178,7 @@ db_schema:
     uLfsYKCs3ok=:
       name: browser
       type: string
-      admin_ui: {order: 5, width: 200}
+      admin_ui: {order: 5, width: 378}
     ulOM_U4+DLM=:
       name: outcome
       type: string
