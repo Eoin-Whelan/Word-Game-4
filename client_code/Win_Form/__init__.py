@@ -61,4 +61,5 @@ class Win_Form(Win_FormTemplate):
         routing.set_url_hash(
             f"top10?position={pos}", replace_current_url=True, redirect=True
         )
+
         routing.reload_page(hard=True)

@@ -28,5 +28,6 @@ class Landing_Panel(Landing_PanelTemplate):
     def start_btn_click(self, **event_args):
         """This method is called when the button is clicked"""
         self.start_btn.enabled = False
-        routing.set_url_hash("NewGame", replace_current_url=True, redirect=True)
-        pass
+        routing.set_url_hash(
+            "NewGame", replace_current_url=False, redirect=True
+        ) 

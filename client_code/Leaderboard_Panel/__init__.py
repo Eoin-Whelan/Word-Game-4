@@ -29,7 +29,7 @@ class Leaderboard_Panel(Leaderboard_PanelTemplate):
           position of the user's submission in the leaderboard.
           
           Note: This is spoofable by a user to appear at the top of the list by
-                entering "*app*/#top10?position=1" in the URL bar of their browser.
+                entering '*app*/#top10?position=1' in the URL bar of their browser.
                 However, this will not affect the integrity of the leaderboard data as the
                 submission of successful attempts is handled in Win_form.
         """
@@ -41,14 +41,18 @@ class Leaderboard_Panel(Leaderboard_PanelTemplate):
                 + " out of "
                 + str(len(anvil.server.call("return_leaderboard")))
             )
-    
+
     # The following button click events are to route to a new game or review the rules.
     def play_game_btn_click(self, **event_args):
-        set_url_hash("NewGame")
-        routing.reload_page(hard=True)
+        routing.set_url_hash(
+            "NewGame", replace_current_url=False, redirect=True
+        )        
+        #routing.reload_page(hard=True)
 
     def restart_btn_click(self, **event_args):
-        set_url_hash("")
-        routing.reload_page(hard=True)
+        routing.set_url_hash(
+            "", replace_current_url=False, redirect=True
+        )
+        #routing.reload_page(hard=True)
 
 
