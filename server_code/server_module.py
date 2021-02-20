@@ -12,9 +12,6 @@ import datetime
 def log_attempt(outcome, given_word, user_input, user_agent):
   # params: outcome, given_word, user_input
   timestamp = datetime.datetime.strptime(datetime.datetime.now().strftime("%c"), '%c')
-  #timestamp = timestamp_str.strftime
-  #user_agent = anvil.http.request(get_user_agent()() + '/get-user-agent')
-  #timestamp_str = f'{outcome}: {given_word} - {", ".join(user_input)} \n{timestamp.strftime("%c")} - {user_agent}'
   app_tables.user_log.add_row(outcome=outcome, given_word=given_word, words=f'{", ".join(user_input)}', ip=anvil.server.context.client.ip, browser=user_agent, date_time=timestamp)
   pass
   

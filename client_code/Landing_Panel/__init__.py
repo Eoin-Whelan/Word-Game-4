@@ -1,14 +1,14 @@
 """
-  Title:      Landing_Form
+  Title:      Landing_Panel
   Author:     Eoin Farrell
   Student No: C00164354
-  Purpose:    Landing_Form serves as both the rules page
+  Purpose:    Landing_Panel serves as both the rules page
               and the first page a user will see when they
               load up the app. Players can navigate to a new
               game from here.
 """
 
-from ._anvil_designer import Landing_FormTemplate
+from ._anvil_designer import Landing_PanelTemplate
 from anvil import *
 import anvil.server
 import anvil.google.auth, anvil.google.drive
@@ -21,7 +21,7 @@ import random
 
 
 @routing.route("", title="Welcome!")
-class Landing_Form(Landing_FormTemplate):
+class Landing_Panel(Landing_PanelTemplate):
     def __init__(self, **properties):
         self.init_components(**properties)
 

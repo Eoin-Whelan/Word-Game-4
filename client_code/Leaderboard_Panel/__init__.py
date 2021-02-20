@@ -1,8 +1,9 @@
 """
-  Title:
-  Author:
-  Student No:
-  Purpose:
+  Title:      Leaderboard_Panel
+  Author:     Eoin Farrell
+  Student No: C00164354
+  Purpose:    Leaderboard_Panel is the leaderboard feature for the app
+              It features the top 10 fastest player times for successful runs.
 """
 
 from ._anvil_designer import Leaderboard_PanelTemplate
@@ -15,43 +16,41 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 from HashRouting import routing
 
-@routing.route('top10')
-@routing.route('top10', url_keys=['position'])
+# Multiple route paths in the event a user is coming from the win form.
+@routing.route("top10")
+@routing.route("top10", url_keys=["position"])
 class Leaderboard_Panel(Leaderboard_PanelTemplate):
-  def __init__(self, **properties):
-    # Set Form properties and Data Bindings.
-    self.init_components(**properties)
-    self.high_scores_panel.items = anvil.server.call('return_leaderboard')[:10:]
-    # Any code you write here will run when the form opens.
-    #if self.url_dict.get('position', ''):
-    
-    if(self.url_dict.get('position', '')):
-      self.your_pos_label.text = "Your position is:"
-      self.play_game_btn.text = "Would you like to play again?"
-      self.pos_label.text = self.url_dict.get('position', '') + " out of " + str(len(anvil.server.call('return_leaderboard')))
-      set_url_hash('top10')
-    else:
-      self.your_pos_label_hide()
-      self.pos_label_hide()
-      
-  def your_pos_label_hide(self, **event_args):
-    """This method is called when the Label is removed from the screen"""
-    pass
+    def __init__(self, **properties):
+        self.init_components(**properties)
+        self.high_scores_panel.items = anvil.server.call("return_leaderboard")[:10:]
 
-  def pos_label_hide(self, **event_args):
-    """This method is called when the Label is removed from the screen"""
-    pass
+        """
+          When a user is coming from a win_form, the URL_key will contain the
+          position of the user's submission in the leaderboard.
+          
+          Note: This is spoofable by a user to appear at the top of the list by
+                entering "*app*/#top10?position=1" in the URL bar of their browser.
+                However, this will not affect the integrity of the leaderboard data as the
+                submission of successful attempts is handled in Win_form.
+        """
+        if self.url_dict.get("position", ""):
+            self.your_pos_label.text = "Your position is:"
+            self.play_game_btn.text = "Would you like to play again?"
+            self.pos_label.text = (
+                self.url_dict.get("position", "")
+                + " out of "
+                + str(len(anvil.server.call("return_leaderboard")))
+            )
+            set_url_hash("top10")
+        else:
+            self.your_pos_label_hide()
+            self.pos_label_hide()
 
-  def play_game_btn_click(self, **event_args):
-    set_url_hash('NewGame')
-    routing.reload_page(hard=True)
+    # The following button click events are to route to a new game or review the rules.
+    def play_game_btn_click(self, **event_args):
+        set_url_hash("NewGame")
+        routing.reload_page(hard=True)
 
-  def restart_btn_click(self, **event_args):
-    set_url_hash('')
-    routing.reload_page(hard=True)
-
-
-
-
-
-
+    def restart_btn_click(self, **event_args):
+        set_url_hash("")
+        routing.reload_page(hard=True)
