@@ -90,5 +90,5 @@ class Game_Panel(Game_PanelTemplate):
                     ).get_bytes().decode("utf-8"),
                 )
                 open_form(
-                    "Win_Form", self.random_word.text, words, round(self.clock, 3)
+                    "Win_Form", self.random_word.text, words, round(self.clock, 2)
                 )

@@ -45,12 +45,11 @@ class Win_Form(Win_FormTemplate):
         word_matches = words
         record_time = time
 
-        self.player_time_label.text = time
+        self.player_time_label.text =  f'{time:.3f}'
         self.victory_gif.source = "https://i.imgur.com/svbDVw7.gif"
 
     def button_1_click(self, **event_args):
         name = "".join(list(filter(None, self.name_box.text.split(" "))))
-        print(name)
         if name:
           pos = anvil.server.call(
               "record_score",
@@ -66,5 +65,6 @@ class Win_Form(Win_FormTemplate):
   
           routing.reload_page(hard=True)
         else:
+          self.name_box.text = ""
           self.name_box.placeholder = "You must enter your name to submit a score."
           self.name_box.focus()
