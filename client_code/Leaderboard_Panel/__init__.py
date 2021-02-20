@@ -54,3 +54,5 @@ class Leaderboard_Panel(Leaderboard_PanelTemplate):
     def restart_btn_click(self, **event_args):
         set_url_hash("")
         routing.reload_page(hard=True)
+
+

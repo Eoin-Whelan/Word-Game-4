@@ -133,7 +133,7 @@ def import_dictionary():
 
 """
   Returns the items of the high_scores table sorted in 
-   ascending order of recorded times.
+  ascending order of recorded times.
 """
 @anvil.server.callable
 def return_leaderboard():
@@ -141,7 +141,8 @@ def return_leaderboard():
     return high_scores
 
 """
-  Returns the items of the user_log table sorted in .
+  Returns the items of the user_log table sorted in
+  descending order of date_time (i.e. the latest entries first).
 """
 @anvil.server.callable
 def return_log():
@@ -165,7 +166,6 @@ def record_score(name, source_word, record_time, given_words):
     """
     curr_scores = app_tables.high_scores.search(tables.order_by("time", ascending=True))
     pos = 1
-    print(record_time)
     for entry in curr_scores:
         if entry["time"] > record_time:
             break
@@ -175,7 +175,10 @@ def record_score(name, source_word, record_time, given_words):
     )
     return pos
 
-
+"""
+  Endpoint returns the user_agent information of the client
+  making the API request. This is used to get the browser
+"""
 @anvil.server.http_endpoint("/get-user-agent")
 def get_user_agent():
-    return anvil.server.request.headers["u
+    return anvil.server.request.headers["ua"]
