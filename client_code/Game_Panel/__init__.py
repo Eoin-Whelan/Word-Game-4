@@ -21,7 +21,7 @@ import random
 from HashRouting import routing
 
 
-@routing.route("NewGame")
+@routing.route("NewGame", title="Go!")
 class Game_Panel(Game_PanelTemplate):
     clock = 0
   

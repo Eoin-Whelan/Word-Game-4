@@ -17,8 +17,8 @@ from anvil.tables import app_tables
 from HashRouting import routing
 
 # Multiple route paths in the event a user is coming from the win form.
-@routing.route("top10")
-@routing.route("top10", url_keys=["position"])
+@routing.route("top10", title="Leaderboard")
+@routing.route("top10", url_keys=["position"], title="How did you do?")
 class Leaderboard_Panel(Leaderboard_PanelTemplate):
     def __init__(self, **properties):
         self.init_components(**properties)
@@ -41,7 +41,9 @@ class Leaderboard_Panel(Leaderboard_PanelTemplate):
                 + " out of "
                 + str(len(anvil.server.call("return_leaderboard")))
             )
-
+            routing.set_url_hash(
+            "top10", replace_current_url=True, redirect=False
+            )
     # The following button click events are to route to a new game or review the rules.
     def play_game_btn_click(self, **event_args):
         routing.set_url_hash(
