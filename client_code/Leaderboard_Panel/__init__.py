@@ -48,7 +48,6 @@ class Leaderboard_Panel(Leaderboard_PanelTemplate):
 
   def restart_btn_click(self, **event_args):
     set_url_hash('')
-   # set_url_hash('top10', pos)
     routing.reload_page(hard=True)
 
 

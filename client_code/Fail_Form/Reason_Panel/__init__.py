@@ -16,7 +16,8 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 
+
 class Reason_Panel(Reason_PanelTemplate):
-  def __init__(self, reason, **properties):
-    self.init_components(**properties)
-    self.reason_label.text = reason
+    def __init__(self, reason, **properties):
+        self.init_components(**properties)
+        self.reason_label.text = reason

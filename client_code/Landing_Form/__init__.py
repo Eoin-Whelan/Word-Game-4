@@ -1,8 +1,11 @@
 """
-  Title:
-  Author:
-  Student No:
-  Purpose:
+  Title:      Landing_Form
+  Author:     Eoin Farrell
+  Student No: C00164354
+  Purpose:    Landing_Form serves as both the rules page
+              and the first page a user will see when they
+              load up the app. Players can navigate to a new
+              game from here.
 """
 
 from ._anvil_designer import Landing_FormTemplate
@@ -16,19 +19,14 @@ from anvil.tables import app_tables
 from HashRouting import routing
 import random
 
-@routing.route('', title='Welcome!')
+
+@routing.route("", title="Welcome!")
 class Landing_Form(Landing_FormTemplate):
-  def __init__(self, **properties):
-    # Set Form properties and Data Bindings.
-    self.init_components(**properties)
-    high_scores = app_tables.high_scores.search(tables.order_by("time",ascending=True))
+    def __init__(self, **properties):
+        self.init_components(**properties)
 
-  def start_btn_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    self.start_btn.enabled = False
-    routing.set_url_hash("NewGame", 
-                           replace_current_url=True,
-                           redirect = True
-                          ) 
-
-    pass
+    def start_btn_click(self, **event_args):
+        """This method is called when the button is clicked"""
+        self.start_btn.enabled = False
+        routing.set_url_hash("NewGame", replace_current_url=True, redirect=True)
+        pass
