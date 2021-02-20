@@ -66,6 +66,8 @@ class Game_Panel(Game_PanelTemplate):
             fail_conditions = anvil.server.call(
                 "submit_answers", words, self.random_word.text
             )
+            
+            # A log of the user input, and browser info is passed to the server
             if any(fail_conditions.values()):
                 anvil.server.call(
                     "log_attempt",

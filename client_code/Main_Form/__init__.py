@@ -33,7 +33,9 @@ from ..Game_Panel import Game_Panel
 from ..Win_Form import Win_Form
 from ..Fail_Form import Fail_Form
 from ..Log_Panel import Log_Panel
+
+
 @routing.main_router
 class Main_Form(Main_FormTemplate):
-  def __init__(self, **properties):
-    self.init_components(**properties)
+    def __init__(self, **properties):
+        self.init_components(**properties)

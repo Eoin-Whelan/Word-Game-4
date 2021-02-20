@@ -5,7 +5,9 @@
   Purpose:    Fail_Form is the page on which the user's incorrect input is
               displayed back as criteria for their failed attempt.
               
-              Note: FailForm is not a URL routing path as it would allow spoofed log entries.
+              Note: FailForm is not a URL routing path as a user does not need direct
+              access via a hash URL. It is only displayed in the event of an attempt at
+              the game itself.
 """
 
 from ._anvil_designer import Fail_FormTemplate
