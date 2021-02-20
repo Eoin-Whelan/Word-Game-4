@@ -76,9 +76,7 @@ class Game_Panel(Game_PanelTemplate):
                     words,
                     anvil.http.request(
                         anvil.server.get_api_origin() + "/get-user-agent"
-                    )
-                    .get_bytes()
-                    .decode("utf-8"),
+                    ).get_bytes().decode("utf-8"),
                 )
                 open_form("Fail_Form", fail_conditions)
             else:
@@ -89,9 +87,7 @@ class Game_Panel(Game_PanelTemplate):
                     words,
                     anvil.http.request(
                         anvil.server.get_api_origin() + "/get-user-agent"
-                    )
-                    .get_bytes()
-                    .decode("utf-8"),
+                    ).get_bytes().decode("utf-8"),
                 )
                 open_form(
                     "Win_Form", self.random_word.text, words, round(self.clock, 3)

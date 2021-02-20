@@ -24,6 +24,8 @@ import datetime
   The timestamp is constructed and the user's IP is retrieved
   via the context object of the server call.
 """
+
+
 @anvil.server.callable
 def log_attempt(outcome, given_word, user_input, user_agent):
     # params: outcome, given_word, user_input
@@ -42,6 +44,8 @@ def log_attempt(outcome, given_word, user_input, user_agent):
   Builds a dictionary of letter occurrences. Primarily used
   in the error checking for submit_answers.
 """
+
+
 @anvil.server.callable
 def occurence_dict(word):
     occurences = {}
@@ -52,8 +56,8 @@ def occurence_dict(word):
 
 @anvil.server.callable
 def submit_answers(user_input, given_word):
-  
-  # A dict of failure criteria is created. The values are appended in the event criteria is found.
+
+    # A dict of failure criteria is created. The values are appended in the event criteria is found.
     fail_conditions = {
         "duplicates": [],
         "short_words": [],
@@ -78,15 +82,15 @@ def submit_answers(user_input, given_word):
     # Did the user input 7 words?
     if len(user_input) != 7:
         fail_conditions.update({"invalid_num": len(user_input)})
-        
+
     dictionary = import_dictionary()
     # Go through each word the user input
     for word in user_input:
-      
+
         # Is the word less than 4 characters long?
         if len(word) < 4:
             fail_conditions["short_words"].append(word)
-            
+
         # Are there any "new"/invalid characters in the word?
         [
             fail_conditions["invalid_chars"].append(letter)
@@ -97,9 +101,9 @@ def submit_answers(user_input, given_word):
 
         # Has the word already been counted as invalid due to extra characters?
         if word not in fail_conditions["invalid_words"]:
-          # Is it a word in the given dictionary?
+            # Is it a word in the given dictionary?
             if word in dictionary:
-              # Build the number of character occurrences and decrement thusly.
+                # Build the number of character occurrences and decrement thusly.
                 occurences = occurence_dict(given_word)
                 for letter in word:
                     if letter in occurences:
@@ -116,12 +120,15 @@ def submit_answers(user_input, given_word):
 
     return fail_conditions
 
+
 """
   Imports the words_txt file through the Anvil Google Drive API.
   It then converts to bytes and casts to a string
   before applying the string-relevant functions to
   transform and return it as a list.
 """
+
+@anvil.server.callable
 def import_dictionary():
 
     dictionary_raw = app_files.words_txt.get_bytes()
@@ -131,19 +138,25 @@ def import_dictionary():
     words = sorted(fSet)[1::]
     return words
 
+
 """
   Returns the items of the high_scores table sorted in 
   ascending order of recorded times.
 """
+
+
 @anvil.server.callable
 def return_leaderboard():
     high_scores = app_tables.high_scores.search(tables.order_by("time", ascending=True))
     return high_scores
 
+
 """
   Returns the items of the user_log table sorted in
   descending order of date_time (i.e. the latest entries first).
 """
+
+
 @anvil.server.callable
 def return_log():
     log = app_tables.user_log.search(tables.order_by("date_time", ascending=False))
@@ -175,10 +188,14 @@ def record_score(name, source_word, record_time, given_words):
     )
     return pos
 
+
 """
   Endpoint returns the user_agent information of the client
-  making the API request. This is used to get the browser
+  making the API request. This is used when submitting an entry
+  to the user_log data table.
 """
+
+
 @anvil.server.http_endpoint("/get-user-agent")
 def get_user_agent():
-    return anvil.server.request.headers["ua"]
+    return anvil.server.request.headers["user-agent"]

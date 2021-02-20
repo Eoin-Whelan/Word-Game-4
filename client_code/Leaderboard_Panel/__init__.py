@@ -41,11 +41,7 @@ class Leaderboard_Panel(Leaderboard_PanelTemplate):
                 + " out of "
                 + str(len(anvil.server.call("return_leaderboard")))
             )
-            set_url_hash("top10")
-        else:
-            self.your_pos_label_hide()
-            self.pos_label_hide()
-
+    
     # The following button click events are to route to a new game or review the rules.
     def play_game_btn_click(self, **event_args):
         set_url_hash("NewGame")
