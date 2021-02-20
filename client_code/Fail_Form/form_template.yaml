@@ -73,7 +73,7 @@ components:
       properties: {role: primary-color, align: center, tooltip: '', border: '', enabled: true,
         foreground: '', visible: true, text: View Rules First!, font_size: null, font: '',
         spacing_above: small, icon_align: right, spacing_below: small, italic: false,
-        background: '', bold: false, underline: false, icon: 'fa:arrow-circle-o-right'}
+        background: '', bold: false, underline: false, icon: 'fa:arrow-circle-right'}
       name: rules_btn
       layout_properties: {}
       event_bindings: {click: rules_btn_click}

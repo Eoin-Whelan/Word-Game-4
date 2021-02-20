@@ -22,7 +22,6 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.http
 import anvil.server
-import time
 from HashRouting import routing
 
 from ..Fail_Form import Fail_Form

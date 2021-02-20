@@ -57,6 +57,7 @@ def occurence_dict(word):
 @anvil.server.callable
 def submit_answers(user_input, given_word):
 
+    dictionary = import_dictionary()
     # A dict of failure criteria is created. The values are appended in the event criteria is found.
     fail_conditions = {
         "duplicates": [],
@@ -77,13 +78,13 @@ def submit_answers(user_input, given_word):
         fail_conditions["invalid_words"].append(word)
         for word in user_input
         if not all(letter in given_word for letter in word)
+        and word in dictionary
     ]
 
     # Did the user input 7 words?
     if len(user_input) != 7:
         fail_conditions.update({"invalid_num": len(user_input)})
 
-    dictionary = import_dictionary()
     # Go through each word the user input
     for word in user_input:
 

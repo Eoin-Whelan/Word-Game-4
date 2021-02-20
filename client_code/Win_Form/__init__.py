@@ -49,17 +49,22 @@ class Win_Form(Win_FormTemplate):
         self.victory_gif.source = "https://i.imgur.com/svbDVw7.gif"
 
     def button_1_click(self, **event_args):
-        global record_time
-        pos = anvil.server.call(
-            "record_score",
-            self.name_box.text,
-            source_word,
-            record_time,
-            ", ".join(word_matches),
-        )
-        # route is set to the top10 form and performs a hard refresh.
-        routing.set_url_hash(
-            f"top10?position={pos}", replace_current_url=True, redirect=True
-        )
-
-        routing.reload_page(hard=True)
+        name = "".join(list(filter(None, self.name_box.text.split(" "))))
+        print(name)
+        if name:
+          pos = anvil.server.call(
+              "record_score",
+              name,
+              source_word,
+              record_time,
+              ", ".join(word_matches),
+          )
+          # route is set to the top10 form and performs a hard refresh.
+          routing.set_url_hash(
+              f"top10?position={pos}", replace_current_url=True, redirect=True
+          )
+  
+          routing.reload_page(hard=True)
+        else:
+          self.name_box.placeholder = "You must enter your name to submit a score."
+          self.name_box.focus()

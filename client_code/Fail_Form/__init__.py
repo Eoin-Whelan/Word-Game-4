@@ -65,7 +65,7 @@ class Fail_Form(Fail_FormTemplate):
             if condition == "invalid_num":
                 self.reasons_column_panel.add_component(
                     Reason_Panel(
-                        f"You submitted an incorrect number of words: {' '.join(str(fail_conditions[condition]))}, not 7"
+                        f"You submitted an incorrect number of words: {''.join(str(fail_conditions[condition]))}, not 7"
                     )
                 )
 
