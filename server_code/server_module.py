@@ -116,8 +116,12 @@ def submit_answers(user_input, given_word):
 
     return fail_conditions
 
-
-@anvil.server.callable
+"""
+  Imports the words_txt file through the Anvil Google Drive API.
+  It then converts to bytes and casts to a string
+  before applying the string-relevant functions to
+  transform and return it as a list.
+"""
 def import_dictionary():
 
     dictionary_raw = app_files.words_txt.get_bytes()
@@ -127,14 +131,18 @@ def import_dictionary():
     words = sorted(fSet)[1::]
     return words
 
-
+"""
+  Returns the items of the high_scores table sorted in 
+   ascending order of recorded times.
+"""
 @anvil.server.callable
 def return_leaderboard():
     high_scores = app_tables.high_scores.search(tables.order_by("time", ascending=True))
     return high_scores
-    # .order_by("position", ascending=False)
 
-
+"""
+  Returns the items of the user_log table sorted in .
+"""
 @anvil.server.callable
 def return_log():
     log = app_tables.user_log.search(tables.order_by("date_time", ascending=False))
