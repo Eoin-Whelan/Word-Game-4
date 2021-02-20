@@ -49,7 +49,8 @@ class Win_Form(Win_FormTemplate):
         self.victory_gif.source = "https://i.imgur.com/svbDVw7.gif"
 
     def button_1_click(self, **event_args):
-        name = "".join(list(filter(None, self.name_box.text.split(" "))))
+        name = self.name_box.text.strip()
+        #"".join(list(filter(None, self.name_box.text.split(" "))))
         if name:
           pos = anvil.server.call(
               "record_score",
