@@ -15,7 +15,6 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 from HashRouting import routing
-from time import sleep
 
 # Multiple route paths in the event a user is coming from the win form.
 @routing.route("top10", title="Leaderboard")
