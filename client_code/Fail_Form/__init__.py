@@ -32,6 +32,12 @@ class Fail_Form(Fail_FormTemplate):
         met.
         """
         for condition in fail_conditions:
+            if condition == "source_word" and fail_conditions[condition]:
+                self.reasons_column_panel.add_component(
+                    Reason_Panel(
+                        f"You used the source word: {fail_conditions[condition]}"
+                    )
+                )
             if condition == "duplicates" and fail_conditions[condition]:
                 self.reasons_column_panel.add_component(
                     Reason_Panel(
