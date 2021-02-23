@@ -67,8 +67,7 @@ def submit_answers(user_input, given_word):
         "invalid_words": [],
         "mispelled_words": [],
     }
-    for word in user_input:
-      if all(word in user_input): fail_conditions['source_word'] = given_word 
+    if given_word in user_input: fail_conditions['source_word'] = given_word
     # Check for duplicate entries.
     [
         fail_conditions["duplicates"].append(word)
