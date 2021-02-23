@@ -67,6 +67,7 @@ def submit_answers(user_input, given_word):
         "invalid_words": [],
         "mispelled_words": [],
     }
+    # Check if the source word was submitted.
     if given_word in user_input: fail_conditions['source_word'] = given_word
     # Check for duplicate entries.
     [
