@@ -60,14 +60,14 @@ def submit_answers(user_input, given_word):
     dictionary = import_dictionary()
     # A dict of failure criteria is created. The values are appended in the event criteria is found.
     fail_conditions = {
-        "source_word": None,
+        "source_word": "",
         "duplicates": [],
         "short_words": [],
         "invalid_chars": [],
         "invalid_words": [],
         "mispelled_words": [],
     }
-    [fail_conditions['source_word'] = given_word if any(word for word in user_input)]
+    fail_conditions['source_word'] = given_word if any(word for word in user_input)
     # Check for duplicate entries.
     [
         fail_conditions["duplicates"].append(word)
